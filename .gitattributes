@@ -1,2 +1,5 @@
 # Force LF line endings, needed for Docker to work on Windows
+* text=auto eol=lf
 *.sh text eol=lf
+*.rb text eol=lf
+*.yml text eol=lf
