@@ -18,7 +18,7 @@ function determineGiscusTheme() {
 
   let giscusAttributes = {
     src: "https://giscus.app/client.js",
-    "data-repo": "lauji-source/lauji-multilanguage",
+    "data-repo": "lauji-source/lauji-multilanguage.github.io",
     "data-repo-id": "",
     "data-category": "Comments",
     "data-category-id": "",
@@ -28,7 +28,7 @@ function determineGiscusTheme() {
     "data-emit-metadata": "0",
     "data-input-position": "bottom",
     "data-theme": giscusTheme,
-    "data-lang": "en",
+    "data-lang": "fr",
     crossorigin: "anonymous",
     async: true,
   };
