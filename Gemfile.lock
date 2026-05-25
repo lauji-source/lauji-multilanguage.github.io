@@ -198,6 +198,7 @@ GEM
       rexml (>= 3.3.9)
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
+    language_server-protocol (3.17.0.5)
     latex-decode (0.4.2)
     liquid (4.0.4)
     listen (3.10.0)
@@ -248,8 +249,15 @@ GEM
     rb-fsevent (0.11.2)
     rb-inotify (0.11.1)
       ffi (~> 1.0)
+    rbs (3.10.3)
+      logger
+      tsort
     rexml (3.4.4)
     rouge (4.7.0)
+    ruby-lsp (0.26.9)
+      language_server-protocol (~> 3.17.0)
+      prism (>= 1.2, < 2.0)
+      rbs (>= 3, < 5)
     safe_yaml (1.0.5)
     sass-embedded (1.97.2-aarch64-linux-gnu)
       google-protobuf (~> 4.31)
@@ -278,6 +286,7 @@ GEM
       execjs (>= 0.3.0, < 3)
     time (0.4.2)
       date
+    tsort (0.2.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.6.0)
@@ -327,6 +336,7 @@ DEPENDENCIES
   jemoji
   observer
   ostruct
+  ruby-lsp
 
 BUNDLED WITH
   4.0.4

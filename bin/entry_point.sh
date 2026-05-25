@@ -21,12 +21,14 @@ manage_gemfile_lock() {
 
 start_jekyll() {
     manage_gemfile_lock
-    bundle exec jekyll serve --watch --port=8080 --host=0.0.0.0 --livereload --verbose --trace --force_polling &
+    bundle exec jekyll serve --watch --port=4000 --host=0.0.0.0 --livereload --verbose --trace --force_polling &
 }
 
 start_jekyll
 
 while true; do
+# The inotifywait command is used to monitor a specified file for any modifications. The -q option makes the program run in quiet mode, so it only outputs messages when an event occurs rather than continuously monitoring. The -e modify,move,create,delete part tells it to watch for four specific events: if the file’s contents change (modify), if it is moved or copied (move), if a new file is created next to it (create), or if it is removed (delete). By passing $CONFIG_FILE as an argument, the script watches that particular configuration file.
+# When any of these events happen, the command signals the event to the bash loop running in the entry point script. The script then restarts Jekyll by killing the existing jekyll process and relaunching it with bundle exec jekyll serve. This ensures that any change to the config triggers an immediate rebuild and live‑reloading of the site.
     inotifywait -q -e modify,move,create,delete $CONFIG_FILE
     if [ $? -eq 0 ]; then
         echo "Change detected to $CONFIG_FILE, restarting Jekyll"
