@@ -1,0 +1,89 @@
+---
+layout: default
+---
+
+<div class="lang-selector">
+  <div class="lang-logo-wrap">
+    <img class="lang-logo" src="{{ '/assets/img/lauji_text_only_inverted_with_path.svg
+' | relative_url }}" alt="lauji.fr" />
+  </div>
+
+  <!-- <h1>{{ page.title | default: "🌐" }}</h1>   -->
+  <h1 class="lang-title" style="--flag: url('{{ '/assets/img/flags/globe.svg' | relative_url }}');">
+    <img class="lang-flag" src="{{ '/assets/img/flags/globe.svg' | relative_url }}" alt="Language" />
+
+  </h1>
+
+  <div class="lang-grid">
+    
+    <!-- <a class="lang-card" style="--flag: url('{{ '/assets/img/flags/en.svg' | relative_url }}');" href="{{ '/en/' | relative_url }}"> -->
+    <a class="lang-card" href="{{ '/en/' | relative_url }}">
+    <!-- <div class="lang-code">en</div> -->
+    <div class="lang-name">
+      English
+    </div>
+    </a>
+    
+    <!-- <a class="lang-card" style="--flag: url('{{ '/assets/img/flags/es.svg' | relative_url }}');" href="{{ '/es/' | relative_url }}"> -->
+    <a class="lang-card" href="{{ '/es/' | relative_url }}">
+    <!-- <div class="lang-code">es</div> -->
+    <div class="lang-name">
+        Español
+    </div>
+    </a>
+    
+    <!-- <a class="lang-card" style="--flag: url('{{ '/assets/img/flags/fr.svg' | relative_url }}');" href="{{ '/fr/' | relative_url }}"> -->
+    <a class="lang-card" href="{{ '/fr/' | relative_url }}">
+    <!-- <div class="lang-code">fr</div> -->
+    <div class="lang-name">
+      Français
+    </div>
+    </a>
+
+    <!-- <a class="lang-card" style="--flag: url('{{ '/assets/img/flags/gcf.svg' | relative_url }}');" href="{{ '/gcf/' | relative_url }}"> -->
+    <a class="lang-card" href="{{ '/gcf/' | relative_url }}">
+    <!-- <div class="lang-code">gcf</div> -->
+    <div class="lang-name">
+      Kréyòl Matinik
+    </div>
+    </a>
+
+    <!-- <a class="lang-card" style="--flag: url('{{ '/assets/img/flags/zh.svg' | relative_url }}');" href="{{ '/zh/' | relative_url }}"> -->
+    <a class="lang-card" href="{{ '/zh/' | relative_url }}">
+    <!-- <div class="lang-code">zh</div> -->
+    <div class="lang-name">
+      中文
+    </div>
+    </a>
+  </div>
+</div>
+
+<script>
+  (function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    // If the user explicitly wants to change language, clear the preference and don't redirect
+    if (urlParams.has('noredirect')) {
+      localStorage.removeItem('preferred-locale');
+      return;
+    }
+
+    // Redirect immediately if a preference is already saved
+    const preferredLocale = localStorage.getItem('preferred-locale');
+    if (preferredLocale) {
+      window.location.href = "{{ '/' | relative_url }}" + preferredLocale + "/";
+      return;
+    }
+
+    // Save preference when a language card is clicked
+    document.querySelectorAll('.lang-card').forEach(card => {
+      card.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        const match = href.match(/\/([a-z]{2,3})\/$/);
+        if (match && match[1]) {
+          localStorage.setItem('preferred-locale', match[1]);
+        }
+      });
+    });
+  })();
+</script>

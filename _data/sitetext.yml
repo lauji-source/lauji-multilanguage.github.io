@@ -14,12 +14,12 @@ en: &DEFAULT_EN
     title: Welcome to our Studio!
     text: It's Nice To Meet You
     button: Tell Me More
-    buttonlink: "#services"
+    buttonlink: "#servicesSection"
 
   services:
-    title: "Services"
-    text: "Lorem ipsum"
-    section: services
+    title: "Serviceshishi"
+    text: "i pou chanjé"
+    section: servicesSection
     list:
       - title: "E-Commerce"
         desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
@@ -57,7 +57,7 @@ en: &DEFAULT_EN
       - title: "Jekyll Theme is created"
         year: "2019"
         desc: "Ravi Riley converted Agency, a Bootstrap-based theme, into a Jekyll theme. The Jekyll theme can be installed as a Ruby gem, or remotely. For more information, visit the documentation."
-        image: assets/img/timeline/3.jpg
+        image: assets/img/timeline/3.jpg 
         alt: image alt text
       - title: "Title"
         year: "2009-2011"

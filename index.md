@@ -1,3 +1,5 @@
 ---
-layout: home
+layout: selector
+title: "🌐"
+permalink: /
 ---

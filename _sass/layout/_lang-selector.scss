@@ -1,0 +1,138 @@
+// Main wrapper for the language selection page. Centers the heading and card grid vertically and horizontally.
+.lang-selector {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  min-height: 60vh;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+
+  // Page heading inside the selector block.
+  h1 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+}
+
+.lang-logo-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+
+}
+
+.lang-logo {
+  width: clamp(8rem, 18vw, 10rem);
+  height: auto;
+  display: block;
+  flex-shrink: 0;
+  // text-align: left;
+  // margin-top: 5em;
+  // margin-left: 5em;
+}
+
+
+// Responsive grid that arranges language cards in a fluid, auto-fitting layout.
+.lang-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  max-width: 960px;
+  width: 100%;
+  justify-items: stretch;
+}
+
+.lang-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: none;
+
+  &:hover {
+    border-color: #0366d6;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.lang-flag {
+  width: 4rem;      // make it smaller
+  height: auto;
+  display: block;
+}
+
+// Clickable card linking to a localized version of the site. Provides visual feedback on hover.
+.lang-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 110px;
+  padding: 1.25rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  background-color: #fff;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.44), rgba(255, 255, 255, 0.92)),
+    var(--flag);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+
+  &:hover {
+    border-color: #0366d6;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+  }
+}
+
+// // Responsive grid that arranges language cards in a fluid, auto-fitting layout.
+// .lang-grid {
+//   display: grid;
+//   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+//   gap: 1rem;
+//   max-width: 700px;
+//   width: 100%;
+// }
+
+// // Clickable card linking to a localized version of the site. Provides visual feedback on hover.
+// .lang-card {
+//   display: block;
+//   padding: 1.5rem;
+//   border: 2px solid #e0e0e0;
+//   border-radius: 8px;
+//   text-decoration: none;
+//   color: inherit;
+//   transition: transform 0.15s, border-color 0.15s;
+
+//   &:hover {
+//     border-color: #0366d6;
+//     transform: translateY(-3px);
+//   }
+// }
+
+// Small uppercase language code label (e.g., "en", "fr") displayed inside each card.
+.lang-code {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #666;
+  letter-spacing: 0.05em;
+}
+
+// Full language name (e.g., "English", "Français") displayed prominently inside each card.
+.lang-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 0.4rem;
+}

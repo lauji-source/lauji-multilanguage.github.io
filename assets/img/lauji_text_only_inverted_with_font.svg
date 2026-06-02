@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="7680"
+   height="2320"
+   viewBox="0 0 7680 2320"
+   version="1.1"
+   id="svg5"
+   sodipodi:docname="lauji_text_only_inverted_with_font.svg"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   inkscape:export-filename="PNG\lauji_text\lauji_text_on_trans2.png"
+   inkscape:export-xdpi="95.995064"
+   inkscape:export-ydpi="95.995064"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25098039"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="0.078776044"
+     inkscape:cx="4500.099"
+     inkscape:cy="-577.58676"
+     inkscape:window-width="1920"
+     inkscape:window-height="1057"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <rect
+       x="403.04132"
+       y="355.43802"
+       width="2611.8347"
+       height="1332.8926"
+       id="rect3496" />
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter8"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <feColorMatrix
+         values="-1 0 0 0 1 0 0 -1 0 1 0 -1 0 0 1 -0.21 -0.72 -0.07 2 0 "
+         result="fbSourceGraphic"
+         id="feColorMatrix8" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix3" />
+      <feColorMatrix
+         id="feColorMatrix4"
+         values="-1 0 0 0 1 0 0 -1 0 1 0 -1 0 0 1 -0.21 -0.72 -0.07 2 0 "
+         result="color2"
+         in="fbSourceGraphic" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Invert"
+       id="filter9"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <feColorMatrix
+         values="-1 0 0 0 1 0 0 -1 0 1 0 -1 0 0 1 -0.21 -0.72 -0.07 2 0 "
+         result="fbSourceGraphic"
+         id="feColorMatrix9" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix1" />
+      <feColorMatrix
+         id="feColorMatrix2"
+         values="-1 0 0 0 1 0 0 -1 0 1 0 -1 0 0 1 -0.21 -0.72 -0.07 2 0 "
+         result="color2"
+         in="fbSourceGraphic" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-size:2471.88px;line-height:0%;font-family:Arial;-inkscape-font-specification:Arial;direction:ltr;fill:#ffaaaa;stroke-width:2.05989;filter:url(#filter8)"
+       x="0.00048525314"
+       y="1746.4894"
+       id="text3814"
+       transform="scale(0.99314955,1.0068977)"><tspan
+         sodipodi:role="line"
+         id="tspan3812"
+         x="0.00048525314"
+         y="1746.4894"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2471.88px;font-family:'MV Boli';-inkscape-font-specification:'MV Boli, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;direction:ltr;stroke-width:2.05989"
+         dx="0 0 0"><tspan
+   style="letter-spacing:1.88498px;word-spacing:0px;direction:ltr;stroke-width:2.05989"
+   id="tspan4513"
+   dx="0"><tspan
+   style="font-size:1612.38px;stroke-width:2.05989"
+   id="tspan6825"> </tspan>a</tspan>uji<tspan
+   style="direction:ltr;fill:#aaccff;stroke-width:2.05989"
+   id="tspan3870">.</tspan>fr</tspan></text>
+    <a
+       id="a6195"
+       transform="matrix(3.6249955,0,0,3.6249955,-4447.8696,-5056.8636)"
+       style="filter:url(#filter9)">
+      <g
+         aria-label="l"
+         transform="scale(0.99314955,1.0068977)"
+         id="text3814-8"
+         style="font-size:681.296px;line-height:0%;font-family:Arial;-inkscape-font-specification:Arial;direction:rtl;fill:#ffaaaa;stroke-width:0.567749">
+        <path
+           d="m 1441.2391,1788.5558 c 5.9869,28.116 -38.8891,46.0695 -61.7321,59.376 -22.6211,13.0848 -44.2443,19.6272 -64.8695,19.6272 -23.73,0 -42.9136,-9.2037 -57.5509,-27.6111 -14.4154,-18.4074 -21.6231,-43.1355 -21.6231,-74.1841 0,-46.573 10.0908,-102.4605 30.2724,-167.6627 20.1816,-65.2022 44.6879,-125.3035 73.5188,-180.3039 l 3.3842,-4.4776 c 16.5008,-33.6207 77.4378,-27.427 78.7684,-27.427 6.4315,0 19.9752,4.0717 23.9672,13.6081 4.2138,9.3145 8.7172,25.1076 8.7172,41.0755 0,45.2423 -12.587,89.323 -29.7128,130.4791 -18.1261,43.56 -61.6104,139.0669 -105.9657,187.1923 -1.7742,23.0647 -0.2505,5.3205 -0.2505,13.9698 0,19.2945 3.5484,34.597 10.6453,45.9076 7.0968,11.3106 9.0961,6.9301 20.8502,6.9301 11.976,0 63.043,-36.6683 76.5713,-45.3176 13.5284,-8.6493 15.0096,8.8183 15.0096,8.8183 z m -116.7085,-100.732 c 28.1656,-31.2704 49.6081,-102.832 67.1284,-141.6428 17.5203,-38.8108 22.9454,-73.2542 27.2076,-95.4088 1.165,-6.0556 3.2806,-12.8808 1.4902,-18.1539 -2.4396,-5.1008 -6.3433,-5.0904 -10.1135,-5.0904 -8.2057,0 -16.9862,16.6606 -32.7323,57.4674 -15.5243,40.8068 -37.8996,129.4207 -52.9804,202.8285 z"
+           style="font-size:681.296px;line-height:0%;font-family:'Script MT Bold';-inkscape-font-specification:'Script MT Bold, Normal';letter-spacing:8.59px;direction:rtl;fill:#ffaaaa;stroke-width:0.567749"
+           id="path6391-5"
+           sodipodi:nodetypes="ccscssccscsscssssccsscscc" />
+      </g>
+    </a>
+  </g>
+</svg>

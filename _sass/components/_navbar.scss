@@ -39,6 +39,12 @@
   }
 }
 @media (min-width: 992px) {
+   /* 
+   * Desktop Styling & Scroll Behavior:
+   * - Default (top of page): Tall padding, transparent background, and larger brand logo.
+   * - Shrunk (scrolled): Triggered by JS adding '.navbar-shrink'. Thinner padding, solid dark background, and smaller brand logo.
+   * - Transitions: Smoothly animates padding and brand size changes.
+   */
   #mainNav {
     padding-top: 25px;
     padding-bottom: 25px;
@@ -46,7 +52,9 @@
     -moz-transition: padding-top 0.3s, padding-bottom 0.3s;
     transition: padding-top 0.3s, padding-bottom 0.3s;
     border: none;
-    background-color: transparent;
+    // background-color: transparent;
+    background-color: rgba($gray-900, 0.8);
+
     .navbar-brand {
       font-size: 1.75em;
       -webkit-transition: all 0.3s;

@@ -12,7 +12,7 @@
 en: &DEFAULT_EN
   nav:
     - title: "Services"
-      section: services
+      section: servicesSection
     - title: "Portfolio"
       section: portfolio
     - title: "About"
@@ -23,8 +23,10 @@ en: &DEFAULT_EN
       section: team
     - title: "Contact"
       section: contact
-    - title: "Theme Source"
-      url: https://github.com/raviriley/agency-jekyll-theme/
+    - title: "🌐"
+      url: "/?noredirect=true"
+    # - title: "Theme Source"
+    #   url: https://github.com/raviriley/agency-jekyll-theme/
 
 en-001: #English (World)
   <<: *DEFAULT_EN
