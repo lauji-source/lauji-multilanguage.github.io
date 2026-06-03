@@ -1,18 +1,26 @@
-<!-- About -->
-{% if site.locale and site.locale != "" and site.locale != nil %}
-  <section class="bg-light page-section" id="{{ site.data.sitetext[site.locale].timeline.section | default: "about" }}">
+<!-- Timeline -->
+<!-- Set current_locale variable to prioritize page.locale over site.locale -->
+{% assign current_locale = page.locale | default: site.locale %}
+<!-- Check if current_locale is valid and non-empty instead of site.locale -->
+{% if current_locale and current_locale != "" and current_locale != nil %}
+  <!-- Render the Timeline section ID using current_locale instead of site.locale -->
+  <section class="bg-light page-section" id="{{ site.data.sitetext[current_locale].timeline.section | default: "about" }}">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">{{ site.data.sitetext[site.locale].timeline.title | markdownify | default: "About" }}</h2>
-          <h3 class="section-subheading text-muted">{{ site.data.sitetext[site.locale].timeline.text | default: "timeline"}}</h3>
+          <!-- Render the Timeline section title using current_locale instead of site.locale -->
+          <h2 class="section-heading text-uppercase">{{ site.data.sitetext[current_locale].timeline.title | markdownify | default: "About" }}</h2>
+          <!-- Render the Timeline section text using current_locale instead of site.locale -->
+          <h3 class="section-subheading text-muted">{{ site.data.sitetext[current_locale].timeline.text | default: "timeline"}}</h3>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-12">
           <ul class="timeline">
-      {%- assign align = site.data.sitetext[site.locale].timeline.start_align -%}
-      {%- for event in site.data.sitetext[site.locale].timeline.events -%}
+      <!-- Assign align variable using current_locale instead of site.locale -->
+      {%- assign align = site.data.sitetext[current_locale].timeline.start_align -%}
+      <!-- Loop through timeline events using current_locale instead of site.locale -->
+      {%- for event in site.data.sitetext[current_locale].timeline.events -%}
             {%- if align == "right" -%}
               {%- if event.align and event.align == "left" -%}
                 {%- assign align = "right" -%}
@@ -44,15 +52,17 @@
                 </div>
               </div>
             </li>
-		  {% endfor %}	
+          {% endfor %}	
             
-		  {% if site.data.sitetext[site.locale].timeline.end %}	
-			<li class="timeline-inverted">
+          <!-- Check if timeline end text exists using current_locale instead of site.locale -->
+          {% if site.data.sitetext[current_locale].timeline.end %}	
+            <li class="timeline-inverted">
               <div class="timeline-image">
-                <h4>{{ site.data.sitetext[site.locale].timeline.end }}</h4>
+                <!-- Render timeline end text using current_locale instead of site.locale -->
+                <h4>{{ site.data.sitetext[current_locale].timeline.end }}</h4>
               </div>
             </li>
-		  {% endif %}
+          {% endif %}
 
           </ul>
         </div>

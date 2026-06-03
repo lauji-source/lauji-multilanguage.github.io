@@ -14,19 +14,18 @@ en: &DEFAULT_EN
     - title: "Services"
       section: servicesSection
     - title: "Portfolio"
-      section: portfolio
+      section: portfolioSection
     - title: "About"
-      section: about
+      section: aboutSection
     - title: "Timeline"
-      section: timeline
+      section: timelineSection
     - title: "Team"
-      section: team
+      section: teamSection
     - title: "Contact"
-      section: contact
+      section: contactSection
     - title: "🌐"
       url: "/?noredirect=true"
-    # - title: "Theme Source"
-    #   url: https://github.com/raviriley/agency-jekyll-theme/
+
 
 en-001: #English (World)
   <<: *DEFAULT_EN
@@ -240,20 +239,20 @@ en-ZW: #English (Zimbabwe)
 es: &DEFAULT_ES
   nav:
     - title: "Servicios"
-      section: servicios
+      section: serviciosSeccion
     - title: "Portafolio"
-      section: portafolio
+      section: portafolioSeccion
     - title: "Sobre Nosotros"
-      section: nosotros
+      section: nosotrosSeccion
     - title: "Cronología"
-      section: cronologia
+      section: cronologiaSeccion
     - title: "Equipo"
-      section: equipo
+      section: equipoSeccion
     - title: "Contáctenos"
-      section: contacto
-    - title: "Fuente de la plantilla"
-      url: https://github.com/raviriley/agency-jekyll-theme/
-
+      section: contactoSeccion
+    - title: "🌐"
+      url: "/?noredirect=true"
+      
 es-419: #Spanish (Latin America and the Caribbean)
   <<: *DEFAULT_ES
 es-AR: #Spanish (Argentina)
@@ -312,19 +311,19 @@ es-VE: #Spanish (Venezuela)
 de: &DEFAULT_DE
   nav:
     - title: "Leistungen"
-      section: Leistungen
+      section: LeistungenSektion
     - title: "Portfolio"
-      section: Portfolio
+      section: PortfolioSektion
     - title: "Über uns"
-      section: Ueber
+      section: UeberSektion
     - title: "Geschichte"
-      section: Geschichte
+      section: GeschichteSektion
     - title: "Team"
-      section: Team
+      section: TeamSektion
     - title: "Kontakt"
-      section: Kontakt
-    - title: "Quellcode des Themas"
-      url: https://github.com/raviriley/agency-jekyll-theme/
+      section: KontaktSektion
+    - title: "🌐"
+      url: "/?noredirect=true"
 
 de-AT: #German (Austria)
   <<: *DEFAULT_DE
@@ -340,3 +339,79 @@ de-LI: #German (Liechtenstein)
   <<: *DEFAULT_DE
 de-LU: #German (Luxembourg)
   <<: *DEFAULT_DE
+
+# French (https://localizely.com/language-code/fr/)
+# ------
+fr: &DEFAULT_FR
+  nav:
+    - title: "Services"
+      section: servicesSection
+    - title: "Portfolio"
+      section: portfolioSection
+    - title: "À propos"
+      section: aproposSection
+    - title: "Chronologie"
+      section: chronologieSection
+    - title: "Équipe"
+      section: equipeSection
+    - title: "Contact"
+      section: contactSection
+    - title: "🌐"
+      url: "/?noredirect=true"
+
+fr-FR: #French (France)
+  <<: *DEFAULT_FR
+fr-CA: #French (Canada)
+  <<: *DEFAULT_FR
+fr-BE: #French (Belgium)
+  <<: *DEFAULT_FR
+fr-CH: #French (Switzerland)
+  <<: *DEFAULT_FR
+
+# Guadeloupean Creole French (https://localizely.com/language-code/gcf/)
+# --------------------------
+gcf: &DEFAULT_GCF
+  nav:
+    - title: "Sèvis"
+      section: sevisSeksyon
+    - title: "Pòtfofyo"
+      section: potfofyoSeksyon
+    - title: "Asou nou"
+      section: asounouSeksyon
+    - title: "Fil a tan-la"
+      section: filatanlaSeksyon
+    - title: "Ekip"
+      section: ekipSeksyon
+    - title: "Kontak"
+      section: kontakSeksyon
+    - title: "🌐"
+      url: "/?noredirect=true"
+
+gcf-GP: #Guadeloupean Creole French (Guadeloupe)
+  <<: *DEFAULT_GCF
+
+# Chinese (https://localizely.com/language-code/zh/)
+# -------
+zh: &DEFAULT_ZH
+  nav:
+    - title: "服务"
+      section: fuwuBufen
+    - title: "作品集"
+      section: zuopinjiBufen
+    - title: "关于我们"
+      section: guanyuwomenBufen
+    - title: "时间线"
+      section: shijianxianBufen
+    - title: "团队"
+      section: tuanduiBufen
+    - title: "联系我们"
+      section: lianxiwomenBufen
+    - title: "🌐"
+      url: "/?noredirect=true"
+
+zh-CN: #Chinese (Simplified, China)
+  <<: *DEFAULT_ZH
+zh-HK: #Chinese (Traditional, Hong Kong)
+  <<: *DEFAULT_ZH
+zh-TW: #Chinese (Traditional, Taiwan)
+  <<: *DEFAULT_ZH
