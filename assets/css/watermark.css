@@ -1,0 +1,15 @@
+body::after {
+  content: "SITE EN COURS\A DE CONSTRUCTION";
+  white-space: pre;
+  text-align: center;  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-30deg);
+  font-size: clamp(2.5rem, 11vw, 9rem);
+  font-weight: 700;
+  font-family: Montserrat, sans-serif;
+  color: hsla(354, 70%, 54%, 0.65);
+  pointer-events: none;
+  user-select: none;
+  z-index: 9999;
+}

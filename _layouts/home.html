@@ -3,11 +3,15 @@ layout: default
 ---
 {% include navheader.html %}
 
-<!-- {% include welcome.html %} -->
+{% comment %}{% include welcome.html %}{% endcomment %}
+
 {% include services.html %}
-{% include portfolio_grid.html %}
+
+
+{% comment %} {% include portfolio_grid.html %} {% endcomment %}
 {% include about.html %}
 {% include timeline.html %}
-{% include team.html %}
-{% include clients.html %}
+{% comment %}{% include team.html %}{% endcomment %}
+
+{% comment %} {% include clients.html %} {% endcomment %}
 {% include contact.html %}

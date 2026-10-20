@@ -11,18 +11,21 @@
 # -----------------
 en: &DEFAULT_EN
   header:
-    title: Welcome to our Studio!
-    text: It's Nice To Meet You
+    title: Welcome to our studio!
+    text: Thank you for stopping by. 
     button: Tell Me More
     buttonlink: "#servicesSection"
 
+  logo:
+    path: assets/img/lauji_com_inverted_with_path.svg
+
   services:
-    title: "Serviceshishi"
-    text: "i pou chanjé"
+    title: "Services"
+    text: "Our offer"
     section: servicesSection
     list:
       - title: "E-Commerce"
-        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
+        desc: "Lorem ipsum dolor 37-39 how to best use"
         icon: fas fa-shopping-cart #find more at https://fontawesome.com/icons
       - title: "Responsive Design"
         desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
@@ -101,33 +104,33 @@ en: &DEFAULT_EN
       - name: "Kay Garland"
         role: "Lead Designer"
         image: assets/img/team/500x500.jpg
-        social:
-          - url: https://twitter.com
-            icon: fab fa-twitter
-          - url: https://facebook.com
-            icon: fab fa-facebook-f
-          - url: https://linkedin.com
-            icon: fab fa-linkedin-in
+        # social:
+        #   - url: https://twitter.com
+        #     icon: fab fa-twitter
+        #   - url: https://facebook.com
+        #     icon: fab fa-facebook-f
+        #   - url: https://linkedin.com
+        #     icon: fab fa-linkedin-in
       - name: "Larry Parker"
         role: "Lead Marketer"
         image: assets/img/team/2.jpg
-        social:
-          - url: https://twitter.com
-            icon: fab fa-twitter
-          - url: https://facebook.com
-            icon: fab fa-facebook-f
-          - url: https://linkedin.com
-            icon: fab fa-linkedin-in
+        # social:
+        #   - url: https://twitter.com
+        #     icon: fab fa-twitter
+        #   - url: https://facebook.com
+        #     icon: fab fa-facebook-f
+        #   - url: https://linkedin.com
+        #     icon: fab fa-linkedin-in
       - name: "Diana Perterson"
         role: "Lead Developer"
         image: assets/img/team/500x500.jpg
-        social:
-          - url: https://twitter.com
-            icon: fab fa-twitter
-          - url: https://facebook.com
-            icon: fab fa-facebook-f
-          - url: https://linkedin.com
-            icon: fab fa-linkedin-in
+        # social:
+        #   - url: https://twitter.com
+        #     icon: fab fa-twitter
+        #   - url: https://facebook.com
+        #     icon: fab fa-facebook-f
+        #   - url: https://linkedin.com
+        #     icon: fab fa-linkedin-in
 
   contact:
     title: "Contact Us"
@@ -146,17 +149,17 @@ en: &DEFAULT_EN
 
   footer:
     legal: "Privacy Policy"
-    social:
-      - url: https://twitter.com
-        icon: "fab fa-twitter"
-      - url: https://facebook.com
-        icon: "fab fa-facebook-f"
-      - url: https://linkedin.com
-        icon: "fab fa-linkedin-in"
-      - url: https://github.com/raviriley/agency-jekyll-theme
-        icon: "fab fa-github"
-      - url: https://instagram.com
-        icon: "fab fa-instagram"
+    # social:
+    #   - url: https://twitter.com
+    #     icon: "fab fa-twitter"
+    #   - url: https://facebook.com
+    #     icon: "fab fa-facebook-f"
+    #   - url: https://linkedin.com
+    #     icon: "fab fa-linkedin-in"
+    #   - url: https://github.com/raviriley/agency-jekyll-theme
+    #     icon: "fab fa-github"
+    #   - url: https://instagram.com
+    #     icon: "fab fa-instagram"
 
 en-001: #English (World)
   <<: *DEFAULT_EN
@@ -374,6 +377,9 @@ es: &DEFAULT_ES
     button: Ver más
     buttonlink: "#serviciosSeccion"
 
+  logo:
+    path: assets/img/lauji_com_inverted_with_path.svg
+
   services:
     title: "Servicios"
     text: "Lorem ipsum"
@@ -459,33 +465,33 @@ es: &DEFAULT_ES
       - name: "Kay Garland"
         role: "Lead Designer"
         image: assets/img/team/500x500.jpg
-        social:
-          - url: https://twitter.com
-            icon: fab fa-twitter
-          - url: https://facebook.com
-            icon: fab fa-facebook-f
-          - url: https://linkedin.com
-            icon: fab fa-linkedin-in
+        # social:
+        #   - url: https://twitter.com
+        #     icon: fab fa-twitter
+        #   - url: https://facebook.com
+        #     icon: fab fa-facebook-f
+        #   - url: https://linkedin.com
+        #     icon: fab fa-linkedin-in
       - name: "Larry Parker"
         role: "Lead Marketer"
         image: assets/img/team/2.jpg
-        social:
-          - url: https://twitter.com
-            icon: fab fa-twitter
-          - url: https://facebook.com
-            icon: fab fa-facebook-f
-          - url: https://linkedin.com
-            icon: fab fa-linkedin-in
+        # social:
+        #   - url: https://twitter.com
+        #     icon: fab fa-twitter
+        #   - url: https://facebook.com
+        #     icon: fab fa-facebook-f
+        #   - url: https://linkedin.com
+        #     icon: fab fa-linkedin-in
       - name: "Diana Perterson"
         role: "Lead Developer"
         image: assets/img/team/500x500.jpg
-        social:
-          - url: https://twitter.com
-            icon: fab fa-twitter
-          - url: https://facebook.com
-            icon: fab fa-facebook-f
-          - url: https://linkedin.com
-            icon: fab fa-linkedin-in
+        # social:
+        #   - url: https://twitter.com
+        #     icon: fab fa-twitter
+        #   - url: https://facebook.com
+        #     icon: fab fa-facebook-f
+        #   - url: https://linkedin.com
+        #     icon: fab fa-linkedin-in
 
   contact:
     title: "Contáctenos"
@@ -504,17 +510,17 @@ es: &DEFAULT_ES
 
   footer:
     legal: "Política de Privacidad"
-    social:
-      - url: https://twitter.com
-        icon: "fab fa-twitter"
-      - url: https://facebook.com
-        icon: "fab fa-facebook-f"
-      - url: https://linkedin.com
-        icon: "fab fa-linkedin-in"
-      - url: https://github.com/raviriley/agency-jekyll-theme
-        icon: "fab fa-github"
-      - url: https://instagram.com
-        icon: "fab fa-instagram"
+    # social:
+    #   - url: https://twitter.com
+    #     icon: "fab fa-twitter"
+    #   - url: https://facebook.com
+    #     icon: "fab fa-facebook-f"
+    #   - url: https://linkedin.com
+    #     icon: "fab fa-linkedin-in"
+    #   - url: https://github.com/raviriley/agency-jekyll-theme
+    #     icon: "fab fa-github"
+    #   - url: https://instagram.com
+    #     icon: "fab fa-instagram"
 
 es-419: #Spanish (Latin America and the Caribbean)
   <<: *DEFAULT_ES
@@ -577,6 +583,9 @@ de: &DEFAULT_DE
     text: Schön das Sie hier sind!
     button: Mehr erfahren
     buttonlink: "#LeistungenSektion"
+
+  logo:
+    path: assets/img/lauji_com_inverted_with_path.svg
 
   services:
     title: "Leistungen"
@@ -663,33 +672,33 @@ de: &DEFAULT_DE
       - name: "Kay Garland"
         role: "Chef-Designer"
         image: assets/img/team/500x500.jpg
-        social:
-          - url: https://twitter.com
-            icon: fab fa-twitter
-          - url: https://facebook.com
-            icon: fab fa-facebook-f
-          - url: https://linkedin.com
-            icon: fab fa-linkedin-in
+        # social:
+        #   - url: https://twitter.com
+        #     icon: fab fa-twitter
+        #   - url: https://facebook.com
+        #     icon: fab fa-facebook-f
+        #   - url: https://linkedin.com
+        #     icon: fab fa-linkedin-in
       - name: "Larry Parker"
         role: "Chef der Werbeabteilung"
         image: assets/img/team/2.jpg
-        social:
-          - url: https://twitter.com
-            icon: fab fa-twitter
-          - url: https://facebook.com
-            icon: fab fa-facebook-f
-          - url: https://linkedin.com
-            icon: fab fa-linkedin-in
+        # social:
+        #   - url: https://twitter.com
+        #     icon: fab fa-twitter
+        #   - url: https://facebook.com
+        #     icon: fab fa-facebook-f
+        #   - url: https://linkedin.com
+        #     icon: fab fa-linkedin-in
       - name: "Diana Perterson"
         role: "Chef-Programmiererin"
         image: assets/img/team/500x500.jpg
-        social:
-          - url: https://twitter.com
-            icon: fab fa-twitter
-          - url: https://facebook.com
-            icon: fab fa-facebook-f
-          - url: https://linkedin.com
-            icon: fab fa-linkedin-in
+        # social:
+        #   - url: https://twitter.com
+        #     icon: fab fa-twitter
+        #   - url: https://facebook.com
+        #     icon: fab fa-facebook-f
+        #   - url: https://linkedin.com
+        #     icon: fab fa-linkedin-in
 
   contact:
     title: "Kontakt"
@@ -708,17 +717,17 @@ de: &DEFAULT_DE
 
   footer:
     legal: "Datenschutzerklärung"
-    social:
-      - url: https://twitter.com
-        icon: "fab fa-twitter"
-      - url: https://facebook.com
-        icon: "fab fa-facebook-f"
-      - url: https://linkedin.com
-        icon: "fab fa-linkedin-in"
-      - url: https://github.com/raviriley/agency-jekyll-theme
-        icon: "fab fa-github"
-      - url: https://instagram.com
-        icon: "fab fa-instagram"
+    # social:
+    #   - url: https://twitter.com
+    #     icon: "fab fa-twitter"
+    #   - url: https://facebook.com
+    #     icon: "fab fa-facebook-f"
+    #   - url: https://linkedin.com
+    #     icon: "fab fa-linkedin-in"
+    #   - url: https://github.com/raviriley/agency-jekyll-theme
+    #     icon: "fab fa-github"
+    #   - url: https://instagram.com
+    #     icon: "fab fa-instagram"
 
 de-AT: #German (Austria)
   <<: *DEFAULT_DE
@@ -740,9 +749,12 @@ de-LU: #German (Luxembourg)
 fr: &DEFAULT_FR
   header:
     title: Bienvenue dans notre Studio !
-    text: Ravi de vous rencontrer
+    text: Merci de votre venue.
     button: En savoir plus
     buttonlink: "#servicesSection"
+
+  logo:
+    path: assets/img/lauji_com_inverted_with_path.svg
 
   services:
     title: "Services"
@@ -826,33 +838,33 @@ fr: &DEFAULT_FR
       - name: "Kay Garland"
         role: "Lead Designer"
         image: assets/img/team/500x500.jpg
-        social:
-          - url: https://twitter.com
-            icon: fab fa-twitter
-          - url: https://facebook.com
-            icon: fab fa-facebook-f
-          - url: https://linkedin.com
-            icon: fab fa-linkedin-in
+        # social:
+        #   - url: https://twitter.com
+        #     icon: fab fa-twitter
+        #   - url: https://facebook.com
+        #     icon: fab fa-facebook-f
+        #   - url: https://linkedin.com
+        #     icon: fab fa-linkedin-in
       - name: "Larry Parker"
         role: "Lead Marketer"
         image: assets/img/team/2.jpg
-        social:
-          - url: https://twitter.com
-            icon: fab fa-twitter
-          - url: https://facebook.com
-            icon: fab fa-facebook-f
-          - url: https://linkedin.com
-            icon: fab fa-linkedin-in
+        # social:
+        #   - url: https://twitter.com
+        #     icon: fab fa-twitter
+        #   - url: https://facebook.com
+        #     icon: fab fa-facebook-f
+        #   - url: https://linkedin.com
+        #     icon: fab fa-linkedin-in
       - name: "Diana Perterson"
         role: "Lead Developer"
         image: assets/img/team/500x500.jpg
-        social:
-          - url: https://twitter.com
-            icon: fab fa-twitter
-          - url: https://facebook.com
-            icon: fab fa-facebook-f
-          - url: https://linkedin.com
-            icon: fab fa-linkedin-in
+        # social:
+        #   - url: https://twitter.com
+        #     icon: fab fa-twitter
+        #   - url: https://facebook.com
+        #     icon: fab fa-facebook-f
+        #   - url: https://linkedin.com
+        #     icon: fab fa-linkedin-in
 
   contact:
     title: "Contactez-nous"
@@ -871,17 +883,17 @@ fr: &DEFAULT_FR
 
   footer:
     legal: "Politique de confidentialité"
-    social:
-      - url: https://twitter.com
-        icon: "fab fa-twitter"
-      - url: https://facebook.com
-        icon: "fab fa-facebook-f"
-      - url: https://linkedin.com
-        icon: "fab fa-linkedin-in"
-      - url: https://github.com/raviriley/agency-jekyll-theme
-        icon: "fab fa-github"
-      - url: https://instagram.com
-        icon: "fab fa-instagram"
+    # social:
+    #   - url: https://twitter.com
+    #     icon: "fab fa-twitter"
+    #   - url: https://facebook.com
+    #     icon: "fab fa-facebook-f"
+    #   - url: https://linkedin.com
+    #     icon: "fab fa-linkedin-in"
+    #   - url: https://github.com/raviriley/agency-jekyll-theme
+    #     icon: "fab fa-github"
+    #   - url: https://instagram.com
+    #     icon: "fab fa-instagram"
 
 fr-FR: #French (France)
   <<: *DEFAULT_FR
@@ -900,6 +912,9 @@ gcf: &DEFAULT_GCF
     text: Sa bèl dè kontré'w
     button: Ba mwen plis detay
     buttonlink: "#sevisSeksyon"
+
+  logo:
+    path: assets/img/lauji_com_inverted_with_path.svg
 
   services:
     title: "Sèvis"
@@ -983,33 +998,33 @@ gcf: &DEFAULT_GCF
       - name: "Kay Garland"
         role: "Lead Designer"
         image: assets/img/team/500x500.jpg
-        social:
-          - url: https://twitter.com
-            icon: fab fa-twitter
-          - url: https://facebook.com
-            icon: fab fa-facebook-f
-          - url: https://linkedin.com
-            icon: fab fa-linkedin-in
+        # social:
+        #   - url: https://twitter.com
+        #     icon: fab fa-twitter
+        #   - url: https://facebook.com
+        #     icon: fab fa-facebook-f
+        #   - url: https://linkedin.com
+        #     icon: fab fa-linkedin-in
       - name: "Larry Parker"
         role: "Lead Marketer"
         image: assets/img/team/2.jpg
-        social:
-          - url: https://twitter.com
-            icon: fab fa-twitter
-          - url: https://facebook.com
-            icon: fab fa-facebook-f
-          - url: https://linkedin.com
-            icon: fab fa-linkedin-in
+        # social:
+        #   - url: https://twitter.com
+        #     icon: fab fa-twitter
+        #   - url: https://facebook.com
+        #     icon: fab fa-facebook-f
+        #   - url: https://linkedin.com
+        #     icon: fab fa-linkedin-in
       - name: "Diana Perterson"
         role: "Lead Developer"
         image: assets/img/team/500x500.jpg
-        social:
-          - url: https://twitter.com
-            icon: fab fa-twitter
-          - url: https://facebook.com
-            icon: fab fa-facebook-f
-          - url: https://linkedin.com
-            icon: fab fa-linkedin-in
+        # social:
+        #   - url: https://twitter.com
+        #     icon: fab fa-twitter
+        #   - url: https://facebook.com
+        #     icon: fab fa-facebook-f
+        #   - url: https://linkedin.com
+        #     icon: fab fa-linkedin-in
 
   contact:
     title: "Kontakté nou"
@@ -1028,29 +1043,32 @@ gcf: &DEFAULT_GCF
 
   footer:
     legal: "Règ a konfidansyalité"
-    social:
-      - url: https://twitter.com
-        icon: "fab fa-twitter"
-      - url: https://facebook.com
-        icon: "fab fa-facebook-f"
-      - url: https://linkedin.com
-        icon: "fab fa-linkedin-in"
-      - url: https://github.com/raviriley/agency-jekyll-theme
-        icon: "fab fa-github"
-      - url: https://instagram.com
-        icon: "fab fa-instagram"
+    # social:
+    #   - url: https://twitter.com
+    #     icon: "fab fa-twitter"
+    #   - url: https://facebook.com
+    #     icon: "fab fa-facebook-f"
+    #   - url: https://linkedin.com
+    #     icon: "fab fa-linkedin-in"
+    #   - url: https://github.com/raviriley/agency-jekyll-theme
+    #     icon: "fab fa-github"
+    #   - url: https://instagram.com
+    #     icon: "fab fa-instagram"
 
 gcf-GP: #Guadeloupean Creole French (Guadeloupe)
   <<: *DEFAULT_GCF
 
-# Chinese (https://localizely.com/language-code/zh/)
+# Chinese Simplified (https://localizely.com/language-code/zh/)
 # -------
-zh: &DEFAULT_ZH
+zh-CN: &DEFAULT_ZH
   header:
     title: "欢迎来到我们的工作室！"
     text: "很高兴认识您"
     button: "了解更多"
     buttonlink: "#fuwuBufen"
+
+  logo:
+    path: assets/img/lauji_com_inverted_with_path.svg
 
   services:
     title: "服务"
@@ -1134,33 +1152,33 @@ zh: &DEFAULT_ZH
       - name: "Kay Garland"
         role: "Lead Designer"
         image: assets/img/team/500x500.jpg
-        social:
-          - url: https://twitter.com
-            icon: fab fa-twitter
-          - url: https://facebook.com
-            icon: fab fa-facebook-f
-          - url: https://linkedin.com
-            icon: fab fa-linkedin-in
+        # social:
+        #   - url: https://twitter.com
+        #     icon: fab fa-twitter
+        #   - url: https://facebook.com
+        #     icon: fab fa-facebook-f
+        #   - url: https://linkedin.com
+            # icon: fab fa-linkedin-in
       - name: "Larry Parker"
         role: "Lead Marketer"
         image: assets/img/team/2.jpg
-        social:
-          - url: https://twitter.com
-            icon: fab fa-twitter
-          - url: https://facebook.com
-            icon: fab fa-facebook-f
-          - url: https://linkedin.com
-            icon: fab fa-linkedin-in
+        # social:
+        #   - url: https://twitter.com
+        #     icon: fab fa-twitter
+        #   - url: https://facebook.com
+        #     icon: fab fa-facebook-f
+        #   - url: https://linkedin.com
+        #     icon: fab fa-linkedin-in
       - name: "Diana Perterson"
         role: "Lead Developer"
         image: assets/img/team/500x500.jpg
-        social:
-          - url: https://twitter.com
-            icon: fab fa-twitter
-          - url: https://facebook.com
-            icon: fab fa-facebook-f
-          - url: https://linkedin.com
-            icon: fab fa-linkedin-in
+        # social:
+        #   - url: https://twitter.com
+        #     icon: fab fa-twitter
+        #   - url: https://facebook.com
+        #     icon: fab fa-facebook-f
+        #   - url: https://linkedin.com
+        #     icon: fab fa-linkedin-in
 
   contact:
     title: "联系我们"
@@ -1191,9 +1209,157 @@ zh: &DEFAULT_ZH
       - url: https://instagram.com
         icon: "fab fa-instagram"
 
-zh-CN: #Chinese (Simplified, China)
-  <<: *DEFAULT_ZH
+
+# Chinese Simplified (https://localizely.com/language-code/zh/)
+# -------
+zh-TW:
+  header:
+    title: "欢迎来到我们的工作室！"
+    text: "很高兴认识您"
+    button: "了解更多"
+    buttonlink: "#fuwuBufen"
+
+  logo:
+    path: assets/img/lauji_com_inverted_with_path.svg
+
+  services:
+    title: "服务"
+    text: "我们提供的服务。"
+    section: fuwuBufen
+    list:
+      - title: "电子商务"
+        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
+        icon: fas fa-shopping-cart
+      - title: "响应式设计"
+        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
+        icon: fas fa-laptop
+      - title: "[Markdown](https://zh.wikipedia.org/wiki/Markdown)"
+        desc: "在此处添加您的描述，完全支持 **Markdown**"
+        icon: fab fa-markdown
+
+  portfolio:
+    title: "作品集"
+    text: "Lorem ipsum dolor sit amet consectetur."
+    section: zuopinjiBufen
+    closebutton: "关闭项目"
+
+  timeline:
+    title: "时间线"
+    text: "Lorem ipsum timeline"
+    section: shijianxianBufen
+    events:
+      - title: "我们谦逊的起点"
+        year: "2009-2011"
+        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
+        image: assets/img/timeline/1.jpg
+        alt:
+      - title: "一家机构诞生了"
+        year: "2011年3月"
+        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
+        image: assets/img/timeline/2.jpg
+        alt:
+      - title: "Jekyll 主题创建"
+        year: "2019"
+        desc: "Ravi Riley 将基于 Bootstrap 的主题 Agency 转换为 Jekyll 主题。该主题可以作为 Ruby gem 安装，也可以远程安装。欲了解更多信息，请访问文档。"
+        image: assets/img/timeline/3.jpg
+        alt: 图片描述
+      - title: "标题"
+        year: "2009-2011"
+        desc: "在此处添加您的描述，完全支持 **Markdown**。"
+        image: assets/img/timeline/4.jpg
+        alt:
+        align: right
+    end: "成为 <br> 我们故事的 <br> 一部分！"
+
+  about:
+    title: "关于我们"
+    text: "我们的故事"
+    body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde. 支持 **Markdown**。"
+    section: guanyuwomenBufen
+
+  clients:
+    section: clients
+    max-height: 100px
+    horizontal-scrolling: ""
+    list:
+      - title: "envato"
+        url: https://github.com/raviriley/agency-jekyll-theme
+        logo: assets/img/clients/envato.jpg
+      - title: "designmodo"
+        url: https://github.com/raviriley/agency-jekyll-theme
+        logo: assets/img/clients/designmodo.jpg
+      - title: "themeforest"
+        url: https://github.com/raviriley/agency-jekyll-theme
+        logo: assets/img/clients/themeforest.jpg
+      - title: "Creative Market"
+        url: https://github.com/raviriley/agency-jekyll-theme
+        logo: assets/img/clients/creative-market.jpg
+
+  team:
+    title: "我们优秀的团队"
+    text: "Lorem ipsum dolor sit amet consectetur."
+    subtext: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde. 支持 **Markdown**。
+    section: tuanduiBufen
+    people:
+      - name: "Kay Garland"
+        role: "Lead Designer"
+        image: assets/img/team/500x500.jpg
+        # social:
+        #   - url: https://twitter.com
+        #     icon: fab fa-twitter
+        #   - url: https://facebook.com
+        #     icon: fab fa-facebook-f
+        #   - url: https://linkedin.com
+        #     icon: fab fa-linkedin-in
+      - name: "Larry Parker"
+        role: "Lead Marketer"
+        image: assets/img/team/2.jpg
+        # social:
+        #   - url: https://twitter.com
+        #     icon: fab fa-twitter
+        #   - url: https://facebook.com
+        #     icon: fab fa-facebook-f
+        #   - url: https://linkedin.com
+        #     icon: fab fa-linkedin-in
+      - name: "Diana Perterson"
+        role: "Lead Developer"
+        image: assets/img/team/500x500.jpg
+        # social:
+        #   - url: https://twitter.com
+        #     icon: fab fa-twitter
+        #   - url: https://facebook.com
+        #     icon: fab fa-facebook-f
+        #   - url: https://linkedin.com
+        #     icon: fab fa-linkedin-in
+
+  contact:
+    title: "联系我们"
+    text: "Lorem ipsum 或致电 123456789"
+    section: lianxiwomenBufen
+    name: "姓名*"
+    name-validation: "请输入您的姓名。"
+    email: "电子邮件*"
+    email-validation: "请输入您的电子邮件地址。"
+    phone: "电话号码"
+    phone-validation: "请输入您的电话号码。"
+    message: "留言*"
+    message-validation: "请输入留言内容。"
+    subject: "联系表单提交"
+    submit: "发送消息"
+
+  footer:
+    legal: "隐私政策"
+    # social:
+    #   - url: https://twitter.com
+    #     icon: "fab fa-twitter"
+    #   - url: https://facebook.com
+    #     icon: "fab fa-facebook-f"
+    #   - url: https://linkedin.com
+    #     icon: "fab fa-linkedin-in"
+    #   - url: https://github.com/raviriley/agency-jekyll-theme
+    #     icon: "fab fa-github"
+    #   - url: https://instagram.com
+    #     icon: "fab fa-instagram"
+
 zh-HK: #Chinese (Traditional, Hong Kong)
-  <<: *DEFAULT_ZH
-zh-TW: #Chinese (Traditional, Taiwan)
   <<: *DEFAULT_ZH

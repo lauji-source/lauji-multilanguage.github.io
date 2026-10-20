@@ -1,3 +1,5 @@
+
+
 <head>
   {% if site.analytics.google %}
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -60,5 +62,9 @@
       }
     }
   </style>
+  {% endif %}
+
+  {% if site.under_construction %}
+    <link href="{{ '/assets/css/watermark.css' | relative_url }}" rel="stylesheet" />
   {% endif %}
 </head>

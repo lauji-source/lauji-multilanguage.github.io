@@ -21,7 +21,7 @@ email      : contact@lauji.fr #this is also the email contact forms will go to
 description: "Drone inspection and technical services"
 author     : lauji.fr
 logo:     #optional, defaults to site title
-  path: assets/img/lauji_text_only_inverted_with_path.svg
+  path: assets/img/lauji_fr_inverted_with_path.svg
   height: 60 #height in px, defaults to 52px
 
 locale: en # See available languages in _data/sitetext.yml
@@ -39,6 +39,9 @@ markdown: kramdown
 sass:
   quiet_deps: true
 
+under_construction: true
+
+include: [".htaccess"]
 # Uncomment following line to use Formspree form ID based URL instead of email based URL
 # Details: https://help.formspree.io/hc/en-us/articles/360017735154-How-to-prevent-spam
 # formspree_form_path: "f/a_form_id"

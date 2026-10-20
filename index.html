@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Drone inspection and technical services">
+  <meta name="author" content="lauji.fr">
+  <link rel="canonical" href="http://localhost:4000/">
+
+  <title>🌐 | lauji.fr</title>
+
+  <!-- Bootstrap core CSS -->
+  <!-- <link href="assets/css/bootstrap.min.css" rel="stylesheet" /> -->
+  <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+
+
+  <!-- Custom fonts for this template -->
+  <!-- <link href="assets/css/all.min.css" rel="stylesheet" type="text/css"> -->
+  <link href="/assets/css/all.min.css" rel="stylesheet" type="text/css">
+  
+    
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    
+      <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet" type="text/css">
+    
+      <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    
+      <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css">
+    
+  
+  <!-- Custom styles for this theme -->
+  <!--<link href="assets/css/agency.min.css" rel="stylesheet">-->
+  <!-- <link href="assets/css/agency.css" rel="stylesheet" /> -->
+  <link href="/assets/css/agency.css" rel="stylesheet" />
+
+
+  <!-- Page container change top padding when nav shrinks -->
+  
+</head>
+
+
+  <body id="page-top">
+
+      <div class="lang-selector">
+  <div class="lang-logo-wrap">
+    <img class="lang-logo" src="/assets/img/lauji_fr_inverted_with_path.svg" alt="lauji.fr" />
+  </div>
+
+  <!-- <h1>🌐</h1>   -->
+  <h1 class="lang-title" style="--flag: url('/assets/img/flags/globe.svg');">
+    <img class="lang-flag" src="/assets/img/flags/globe.svg" alt="Language" />
+
+  </h1>
+
+  <div class="lang-grid">
+    
+    <!-- <a class="lang-card" style="--flag: url('/assets/img/flags/en.svg');" href="/en/"> -->
+    <a class="lang-card" href="/en/">
+    <!-- <div class="lang-code">en</div> -->
+    <div class="lang-name">
+      English
+    </div>
+    </a>
+    
+    <!-- <a class="lang-card" style="--flag: url('/assets/img/flags/es.svg');" href="/es/"> -->
+    <!-- <a class="lang-card" href="/es/">-->
+    <!-- <div class="lang-code">es</div> -->
+    <!-- <div class="lang-name">
+        Español
+    </div>
+    </a>-->
+    
+    <!-- <a class="lang-card" style="--flag: url('/assets/img/flags/fr.svg');" href="/fr/"> -->
+    <a class="lang-card" href="/fr/">
+    <!-- <div class="lang-code">fr</div> -->
+    <div class="lang-name">
+      Français
+    </div>
+    </a>
+
+    <!-- <a class="lang-card" style="--flag: url('/assets/img/flags/gcf.svg');" href="/gcf/"> -->
+    <a class="lang-card" href="/gcf/">
+    <!-- <div class="lang-code">gcf</div> -->
+    <div class="lang-name">
+      Kréyòl Matinik
+    </div>
+    </a>
+
+    <!-- <a class="lang-card" style="--flag: url('/assets/img/flags/zh.svg');" href="/zh/"> -->
+    <a class="lang-card" href="/zh/">
+    <!-- <div class="lang-code">zh</div> -->
+    <div class="lang-name">
+      中文
+    </div>
+    </a>
+  </div>
+</div>
+
+<script>
+  (function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    // If the user explicitly wants to change language, clear the preference and don't redirect
+    if (urlParams.has('noredirect')) {
+      localStorage.removeItem('preferred-locale');
+      return;
+    }
+
+    // Redirect immediately if a preference is already saved
+    const preferredLocale = localStorage.getItem('preferred-locale');
+    if (preferredLocale) {
+      window.location.href = "/" + preferredLocale + "/";
+      return;
+    }
+
+    // Save preference when a language card is clicked
+    document.querySelectorAll('.lang-card').forEach(card => {
+      card.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        const match = href.match(/\/([a-z]{2,3})\/$/);
+        if (match && match[1]) {
+          localStorage.setItem('preferred-locale', match[1]);
+        }
+      });
+    });
+  })();
+</script>
+
+	  <!-- Footer -->
+<footer class="footer" id="footer" style="background-color: white">
+  <div class="container">
+    
+    <div class="row align-items-center">
+      <div class="col-md-4">
+        <span class="copyright"
+          >copyright &copy; lauji.fr 2026</span
+        >
+      </div>
+      <!-- Social Media -->
+      <div class="col-md-4">
+        <ul class="list-inline social-buttons">
+          
+        </ul>
+      </div>
+      <!-- Legal -->
+      <div class="col-md-4">
+        <ul class="list-inline quicklinks">
+          <li class="list-inline-item">
+            <a href="legal"
+              >Privacy Policy</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+</footer>
+
+<!-- End Footer -->
+
+
+	  <!-- Bootstrap core JavaScript -->
+	  <!-- <script src="assets/js/jquery.min.js"></script>
+	  <script src="assets/js/bootstrap.bundle.min.js"></script> -->
+
+	  <!-- Plugin JavaScript -->
+	  <!-- <script src="assets/js/jquery.easing.min.js"></script> -->
+
+	  <!-- Contact form JavaScript -->
+	  <!-- <script src="assets/js/jqBootstrapValidation.js"></script>
+	  <script src="assets/js/contact_me.js"></script> -->
+
+	  <!-- Custom scripts for this template -->
+	  <!-- <script src="assets/js/agency.min.js"></script>	 -->
+
+	  <!-- Bootstrap core JavaScript -->
+      <script src="/assets/js/jquery.min.js"></script>
+      <script src="/assets/js/bootstrap.bundle.min.js"></script>
+
+      <!-- Plugin JavaScript -->
+      <script src="/assets/js/jquery.easing.min.js"></script>
+
+      <!-- Contact form JavaScript -->
+      <script src="/assets/js/jqBootstrapValidation.js"></script>
+      <script src="/assets/js/contact_me.js"></script>
+
+      <!-- Custom scripts for this template -->
+      <script src="/assets/js/agency.min.js"></script>
+
+  </body>
+</html>
