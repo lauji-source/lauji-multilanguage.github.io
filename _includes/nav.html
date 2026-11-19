@@ -1,4 +1,34 @@
-<!-- Navigation -->
+<!--
+  Main navigation bar for the Jekyll agency theme.
+  The menu labels are pulled from the locale dictionary and the logo is selected
+  based on the active language when region-specific assets exist.
+-->
+
+<!--
+  variable current_locale:
+    Chooses the active locale for the page so the correct translated navigation labels are used.
+-->
+{% assign current_locale = page.locale | default: site.locale | default: site.data.site.default_locale %}
+
+<!--
+  variable shared:
+    Loads site-wide settings from _data/site.yml.
+-->
+{% assign shared = site.data.site %}
+
+<!--
+  variable locale_text:
+    Loads the localized navigation labels for the active locale.
+-->
+{% assign locale_text = site.data.sitetext[current_locale] %}
+{% unless locale_text %}
+  {% assign base_locale = current_locale | split: '-' | first %}
+  {% assign locale_text = site.data.sitetext[base_locale] %}
+{% endunless %}
+{% unless locale_text %}
+  {% assign locale_text = site.data.sitetext[shared.default_locale] %}
+{% endunless %}
+
 <nav
   class="navbar navbar-expand-lg navbar-dark fixed-top"
   id="mainNav"
@@ -7,9 +37,19 @@
   <div class="container">
     <a class="navbar-brand js-scroll-trigger" href="{{ site.baseurl }}/#">
       {%- if site.logo -%}
+      <!--
+        Select locale-specific logo if available, otherwise fall back to the default site logo.
+      -->
+      {%- if current_locale == 'zh-CN' and site.logo_zh_CN -%}
+        {%- assign logo = site.logo_zh_CN -%}
+      {%- elsif current_locale == 'zh-TW' and site.logo_zh_TW -%}
+        {%- assign logo = site.logo_zh_TW -%}
+      {%- else -%}
+        {%- assign logo = site.logo -%}
+      {%- endif -%}
       <img
-        height="{{ site.logo.height | default: 52 }}"
-        src="{{ site.logo.path }}"
+        height="{{ logo.height | default: 52 }}"
+        src="{{ logo.path | relative_url }}"
       />
       {%- else -%} {{ site.title }} {%- endif -%}
     </a>
@@ -26,43 +66,28 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav text-uppercase ml-auto">
-      {% if site.locale and site.locale != "" and site.locale != nil %}
-        {%- for link in site.data.navigation[site.locale].nav -%}
+        <!--
+          loop over site.data.navigation.nav:
+            Builds the menu items and uses the current locale dictionary for each label.
+        -->
+        {%- for item in site.data.navigation.nav -%}
+        {%- assign label = locale_text.nav[item.key] -%}
         <li class="nav-item">
-          {%- if link.url -%}
-          <a class="nav-link js-scroll-trigger" href="{{ link.url }}"
-            >{{ link.title }}</a
+          {%- if item.url -%}
+          <a class="nav-link js-scroll-trigger" href="{{ item.url }}"
+            >{{ label }}</a
           >
-          {%- elsif link.section -%}
+          {%- elsif item.section -%}
           <a
             class="nav-link js-scroll-trigger"
-            href="{{ site.baseurl }}/#{{ link.section }}"
-            >{{ link.title }}</a
+            href="{{ site.baseurl }}/#{{ item.section }}"
+            >{{ label }}</a
           >
           {%- else -%}
-          <a class="nav-link js-scroll-trigger" href="#">{{ link.title }}</a>
+          <a class="nav-link js-scroll-trigger" href="#">{{ label }}</a>
           {%- endif -%}
         </li>
         {%- endfor -%}
-      {% else %}
-        {%- for link in site.data.navigation.nav -%}
-        <li class="nav-item">
-          {%- if link.url -%}
-          <a class="nav-link js-scroll-trigger" href="{{ link.url }}"
-            >{{ link.title }}</a
-          >
-          {%- elsif link.section -%}
-          <a
-            class="nav-link js-scroll-trigger"
-            href="{{ site.baseurl }}/#{{ link.section }}"
-            >{{ link.title }}</a
-          >
-          {%- else -%}
-          <a class="nav-link js-scroll-trigger" href="#">{{ link.title }}</a>
-          {%- endif -%}
-        </li>
-        {%- endfor -%}
-      {% endif %}
       </ul>
     </div>
   </div>

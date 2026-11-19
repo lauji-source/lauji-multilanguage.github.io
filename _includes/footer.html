@@ -1,17 +1,53 @@
-<!-- Footer -->
+<!--
+  Footer section for the Jekyll agency theme.
+  It renders the copyright text, social links, and footer legal link,
+  while keeping the legal label localized through the translation data.
+-->
+
+<!--
+  variable current_locale:
+    Chooses the language for the current page and falls back to the default locale if needed.
+-->
+{% assign current_locale = page.locale | default: site.locale | default: site.data.site.default_locale %}
+
+<!--
+  variable shared:
+    Loads the site config so the footer can read social links and global settings.
+-->
+{% assign shared = site.data.site %}
+
+<!--
+  variable locale_text:
+    Loads the translated footer text for the active locale.
+-->
+{% assign locale_text = site.data.sitetext[current_locale] %}
+{% unless locale_text %}
+  {% assign base_locale = current_locale | split: '-' | first %}
+  {% assign locale_text = site.data.sitetext[base_locale] %}
+{% endunless %}
+{% unless locale_text %}
+  {% assign locale_text = site.data.sitetext[shared.default_locale] %}
+{% endunless %}
+
 <footer class="footer" id="footer" style="background-color: white">
   <div class="container">
-    {% if site.locale and site.locale != "" and site.locale != nil %}
     <div class="row align-items-center">
       <div class="col-md-4">
+        <!--
+          site.title and the current year are rendered in the copyright line.
+        -->
         <span class="copyright"
           >copyright &copy; {{ site.title }} {{ 'now' | date: "%Y" }}</span
         >
       </div>
       <!-- Social Media -->
       <div class="col-md-4">
+        <!--
+          loop over shared.footer.social:
+            Builds the list of social media links defined in the site config.
+        -->
         <ul class="list-inline social-buttons">
-          {% for link in site.data.sitetext[site.locale].footer.social %}
+          {% for link in shared.footer.social %}
           <li class="list-inline-item">
             {% if link.url %}
             <a href="{{ link.url }}">
@@ -26,48 +62,17 @@
       <div class="col-md-4">
         <ul class="list-inline quicklinks">
           <li class="list-inline-item">
+            <!--
+              property locale_text.footer.legal from the variable locale_text:
+                Displays the translated label for the legal/privacy link.
+            -->
             <a href="legal"
-              >{{ site.data.sitetext[site.locale].footer.legal | default:
-              "Privacy Policy" }}</a
+              >{{ locale_text.footer.legal | default: "Privacy Policy" }}</a
             >
           </li>
         </ul>
       </div>
     </div>
-    {% else %}
-    <div class="row align-items-center">
-      <div class="col-md-4">
-        <span class="copyright"
-          >Copyright &copy; {{ site.title }} {{ 'now' | date: "%Y" }}</span
-        >
-      </div>
-      <!-- Social Media -->
-      <div class="col-md-4">
-        <ul class="list-inline social-buttons">
-          {% for link in site.data.sitetext.footer.social %}
-          <li class="list-inline-item">
-            {% if link.url %}
-            <a href="{{ link.url }}">
-              {% if link.icon %}<i class="{{ link.icon }}"></i>{% endif %}
-            </a>
-            {% endif %}
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-      <!-- Legal -->
-      <div class="col-md-4">
-        <ul class="list-inline quicklinks">
-          <li class="list-inline-item">
-            <a href="legal"
-              >{{ site.data.sitetext.footer.legal | default:
-              "Privacy Policy" }}</a
-            >
-          </li>
-        </ul>
-      </div>
-    </div>
-    {% endif %}
   </div>
 </footer>
 {% if page.layout == "page" %}

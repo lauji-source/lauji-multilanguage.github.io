@@ -1,0 +1,106 @@
+# Guadeloupean Creole French text only. Structure, icons, images, URLs, and section IDs live in _data/site.yml.
+
+header:
+  title: Byenveni adan stidyo an nou !
+  text: Sa bèl dè kontré'w
+  button: Ba mwen plis detay
+
+nav:
+  services: Sèvis
+  about: Asou nou
+  timeline: Fil a tan-la
+  contact: Kontak
+  language: "🌐"
+
+services:
+  title: Sèvis
+  text: Sa nou ka pwopozé.
+  items:
+    ecommerce:
+      title: E-Commerce
+      desc: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.
+    responsive:
+      title: Design ki ka adaptif
+      desc: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.
+    markdown:
+      title: "[Markdown](https://gcf.wikipedia.org/wiki/Markdown)"
+      desc: Eksplikasyon a'w isi-la, épi sipò **Markdown** konplè
+
+portfolio:
+  title: Pòtfofyo
+  text: Lorem ipsum dolor sit amet consectetur.
+  closebutton: Fèmé pwojè-la
+
+timeline:
+  title: Fil a tan-la
+  text: Lorem ipsum timeline
+  end: "Vini <br> maké <br> listwa épi nou !"
+  events:
+    beginnings:
+      title: Ti konmansman an nou
+      year: "2009-2011"
+      desc: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+      alt: ""
+    agency-born:
+      title: On ajans fèt
+      year: Maws 2011
+      desc: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+      alt: ""
+    jekyll-theme:
+      title: Tèm Jekyll-la fèt
+      year: "2019"
+      desc: Ravi Riley chanjé Agency, on tèm Bootstrap, pou fè'y on tèm Jekyll. Ou pé enstalé'y kon on jèm Ruby, oben a distans. Pou plis enfòmasyon, ay gadé dokimantasyon-la.
+      alt: ti désen
+    your-story:
+      title: Tit
+      year: "2009-2011"
+      desc: Eksplikasyon a'w isi-la, **Markdown** sipòté konplètman.
+      alt: ""
+
+about:
+  title: Asou nou
+  text: Listwa an nou
+  body: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde. **Markdown** sipòté.
+
+team:
+  title: EKIP MAWVELÉ AN NOU
+  text: Lorem ipsum dolor sit amet consectetur.
+  subtext: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde. **Markdown** sipòté.
+  people:
+    kay-garland:
+      name: Kay Garland
+      role: Lead Designer
+    larry-parker:
+      name: Larry Parker
+      role: Lead Marketer
+    diana-perterson:
+      name: Diana Perterson
+      role: Lead Developer
+
+clients:
+  items:
+    envato:
+      title: envato
+    designmodo:
+      title: designmodo
+    themeforest:
+      title: themeforest
+    creative-market:
+      title: Creative Market
+
+contact:
+  title: Kontakté nou
+  text: Lorem ipsum oben kriyé 123456789
+  name: Non*
+  name-validation: Eri non a'w souplé.
+  email: Imèl*
+  email-validation: Eri adrès imèl a'w souplé.
+  phone: Niméwo a téléfòn
+  phone-validation: Eri niméwo a téléfòn a'w souplé.
+  message: Mésaj*
+  message-validation: Eri on mésaj souplé.
+  subject: Mésaj voyé dépi fòmilè-la
+  submit: Voyé mésaj-la
+
+footer:
+  legal: Règ a konfidansyalité

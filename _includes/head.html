@@ -1,8 +1,16 @@
 
+<!--
+  Head metadata block for the Jekyll agency theme.
+  This section loads the global HTML metadata, analytics, alternate language links,
+  CSS assets, and a small page-specific style tweak used by the navigation layout.
+-->
 
 <head>
   {% if site.analytics.google %}
-  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!--
+    site.analytics.google:
+      Enables Google Analytics when a tracking ID is configured in the site settings.
+  -->
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.google }}"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -24,11 +32,25 @@
 
   <title>{% if page.title %}{{ page.title | append: " | " | append: site.title }}{% else %}{{ site.title }}{% endif %}</title>
 
+  <!--
+    variable languages:
+      Creates the list of supported localized routes for alternate hreflang tags.
+  -->
+  {% assign languages = "en,fr,gcf,zh-CN,zh-TW" | split: "," %}
+  {% for lang in languages %}
+  <link rel="alternate" hreflang="{{ lang }}" href="{{ site.url }}/{{ lang }}/">
+  {% endfor %}
+  <link rel="alternate" hreflang="x-default" href="{{ site.url }}/">
+
   <!-- Bootstrap core CSS -->
   <!-- <link href="assets/css/bootstrap.min.css" rel="stylesheet" /> -->
   <link href="{{ '/assets/css/bootstrap.min.css' | relative_url }}" rel="stylesheet" />
 
-
+  <!--
+    site.data.style.fonts_urls:
+      When custom font URLs are configured, load them here.
+      Otherwise, fall back to the default theme fonts.
+  -->
   <!-- Custom fonts for this template -->
   <!-- <link href="assets/css/all.min.css" rel="stylesheet" type="text/css"> -->
   <link href="{{ '/assets/css/all.min.css' | relative_url }}" rel="stylesheet" type="text/css">
@@ -44,13 +66,16 @@
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
   {% endif %}
+
   <!-- Custom styles for this theme -->
   <!--<link href="assets/css/agency.min.css" rel="stylesheet">-->
   <!-- <link href="assets/css/agency.css" rel="stylesheet" /> -->
   <link href="{{ '/assets/css/agency.css' | relative_url }}" rel="stylesheet" />
 
-
-  <!-- Page container change top padding when nav shrinks -->
+  <!--
+    page.layout == "page":
+      Adds extra top padding when the page layout is the full-page version.
+  -->
   {% if page.layout == "page" %}
   <style>
     #pagecontainer {

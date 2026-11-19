@@ -1,42 +1,62 @@
-<!-- About -->
-<!-- Set current_locale variable to prioritize page.locale over site.locale -->
-{% assign current_locale = page.locale | default: site.locale %}
-<!-- Check if current_locale is valid and non-empty instead of site.locale -->
-{% if current_locale and current_locale != "" and current_locale != nil %}
-<!-- Render the About section ID using current_locale instead of site.locale -->
-<section class="page-section" id="{{ site.data.sitetext[current_locale].about.section | default: "about" }}">
+<!--
+  About section for the Jekyll agency theme.
+  This block renders the company/organization intro and keeps the copy
+  localized through the site data files instead of hardcoded strings.
+-->
+
+<!--
+  variable current_locale:
+    Chooses the language for the active page. It falls back from page.locale,
+    to site.locale, and finally to the default locale configured in site data.
+-->
+{% assign current_locale = page.locale | default: site.locale | default: site.data.site.default_locale %}
+
+<!--
+  variable shared:
+    Loads the shared theme configuration from _data/site.yml.
+    It provides the section id and other global site settings.
+-->
+{% assign shared = site.data.site %}
+
+<!--
+  variable locale_text:
+    Loads the translated strings for the active locale.
+    This is the main dictionary used for the section heading and body text.
+-->
+{% assign locale_text = site.data.sitetext[current_locale] %}
+{% unless locale_text %}
+  {% assign base_locale = current_locale | split: '-' | first %}
+  {% assign locale_text = site.data.sitetext[base_locale] %}
+{% endunless %}
+{% unless locale_text %}
+  {% assign locale_text = site.data.sitetext[shared.default_locale] %}
+{% endunless %}
+
+<!--
+  property shared.sections.about from the variable shared:
+    Sets the section anchor id; if not configured, it falls back to "about".
+-->
+<section class="page-section" id="{{ shared.sections.about | default: "about" }}">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <!-- Render the About section title using current_locale instead of site.locale -->
-        <h2 class="section-heading text-uppercase">{{ site.data.sitetext[current_locale].about.title | default: "About Us" }}</h2>
-        <!-- Render the About section text using current_locale instead of site.locale -->
-        <h3 class="section-subheading text-muted">{{ site.data.sitetext[current_locale].about.text | default: "" }}</h3>
+        <!--
+          property locale_text.about.title from the variable locale_text:
+            Displays the translated heading for the about section.
+        -->
+        <h2 class="section-heading text-uppercase">{{ locale_text.about.title | default: "About Us" }}</h2>
+        <h3 class="section-subheading text-muted">{{ locale_text.about.text | default: "" }}</h3>
       </div>
     </div>
     <div class="row">
       <div class="col-lg-8 mx-auto text-center">
-        <!-- Render the About section body using current_locale instead of site.locale -->
-        <div class="large text-muted">{{ site.data.sitetext[current_locale].about.body | markdownify }}</div>
+        <!--
+          property locale_text.about.body from the variable locale_text:
+            Renders the main descriptive paragraph for this section.
+        -->
+        <div class="large text-muted">{{ locale_text.about.body | markdownify }}</div>
       </div>
     </div>
   </div>
 </section>
-{% else %}
-<section class="page-section" id="{{ site.data.sitetext.about.section | default: "about" }}">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <h2 class="section-heading text-uppercase">{{ site.data.sitetext.about.title | default: "About Us" }}</h2>
-        <h3 class="section-subheading text-muted">{{ site.data.sitetext.about.text | default: "" }}</h3>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-8 mx-auto text-center">
-        <div class="large text-muted">{{ site.data.sitetext.about.body | markdownify }}</div>
-      </div>
-    </div>
-  </div>
-</section>
-{% endif %}
 <!-- End About -->

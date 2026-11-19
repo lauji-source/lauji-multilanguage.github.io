@@ -1,37 +1,61 @@
-<!-- Clients -->
-<!-- Set current_locale variable to prioritize page.locale over site.locale -->
-{% assign current_locale = page.locale | default: site.locale %}
-<!-- Check if current_locale is valid and non-empty instead of site.locale -->
-{% if current_locale and current_locale != "" and current_locale != nil %}
-  <!-- Render the Clients section ID using current_locale instead of site.locale -->
-  <section class="py-5" id="{{ site.data.sitetext[current_locale].clients.section | default: "clients" }}">
-    <div class="container">
-      <!-- Check if horizontal scrolling is enabled using current_locale instead of site.locale -->
-      <div class="row" {% if site.data.sitetext[current_locale].clients.horizontal-scrolling == "yes" %} id="scrolling-clients" {% endif %}>
-        <!-- Loop through clients list using current_locale instead of site.locale -->
-        {% for client in site.data.sitetext[current_locale].clients.list %}
+<!--
+  Clients section for the Jekyll agency theme.
+  This block renders the client logo strip and uses the localized site data
+  to look up the alt text for each logo.
+-->
+
+<!--
+  variable current_locale:
+    Resolves the locale for the current page. The site supports multiple languages,
+    so this ensures the client section uses the right translation set.
+-->
+{% assign current_locale = page.locale | default: site.locale | default: site.data.site.default_locale %}
+
+<!--
+  variable shared:
+    Loads the shared configuration from _data/site.yml.
+    The client list and display settings live here.
+-->
+{% assign shared = site.data.site %}
+
+<!--
+  variable locale_text:
+    Loads the localized text dictionary for the active locale.
+    It is used to fetch the alt label for each client logo.
+-->
+{% assign locale_text = site.data.sitetext[current_locale] %}
+{% unless locale_text %}
+  {% assign base_locale = current_locale | split: '-' | first %}
+  {% assign locale_text = site.data.sitetext[base_locale] %}
+{% endunless %}
+{% unless locale_text %}
+  {% assign locale_text = site.data.sitetext[shared.default_locale] %}
+{% endunless %}
+
+<!--
+  property shared.sections.clients from the variable shared:
+    Sets the section id. If it is not configured, the default anchor is "clientsSection".
+-->
+<section class="py-5" id="{{ shared.sections.clients | default: "clientsSection" }}">
+  <div class="container">
+    <div class="row" {% if shared.clients.horizontal_scrolling %} id="scrolling-clients" {% endif %}>
+      <!--
+        loop over shared.clients.items:
+          Each item defines a client name, URL, and logo image.
+      -->
+      {% for item in shared.clients.items %}
+        <!--
+          variable text:
+            Looks up the translated client label using the current item's key.
+        -->
+        {% assign text = locale_text.clients.items[item.key] %}
         <div class="col-md-3 col-sm-6">
-          <!-- Render client logo and max-height using current_locale instead of site.locale -->
-          <a href="{{ client.url }}">
-            <img class="img-fluid d-block mx-auto" src="{{ client.logo | relative_url }}" alt="{{ client.title | relative_url }}" style="max-height: {{ site.data.sitetext[current_locale].clients.max-height | default: "100px" }}">
+          <a href="{{ item.url }}">
+            <img class="img-fluid d-block mx-auto" src="{{ item.logo | relative_url }}" alt="{{ text.title | default: item.key }}" style="max-height: {{ shared.clients.max_height | default: "100px" }}">
           </a>
         </div>
-        {% endfor %}
-      </div>
-    </div>
-  </section>
-{% else %}
-<section class="py-5" id="{{ site.data.sitetext.clients.section | default: "clients" }}">
-  <div class="container">
-    <div class="row" {% if site.data.sitetext.clients.horizontal-scrolling == "yes" %} id="scrolling-clients" {% endif %}>
-    {% for client in site.data.sitetext.clients.list %}
-      <div class="col-md-3 col-sm-6">
-        <a href="{{ client.url }}">
-          <img class="img-fluid d-block mx-auto" src="{{ client.logo | relative_url }}" alt="{{ client.title | relative_url }}" style="max-height: {{ site.data.sitetext.clients.max-height | default: "100px" }}">
-        </a>
-      </div>
-    {% endfor %}
+      {% endfor %}
     </div>
   </div>
 </section>
-{% endif %}
+<!-- End Clients -->

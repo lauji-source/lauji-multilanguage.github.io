@@ -1,0 +1,86 @@
+# Shared, language-independent site structure.
+# Human-readable text lives in _data/sitetext/<lang>.yml.
+# Never put translatable strings, icons, images, URLs, or section IDs in a locale file.
+
+default_locale: en
+
+# Canonical section IDs. Templates resolve section keys through this map so every
+# language links to exactly the same anchors.
+sections:
+  services: servicesSection
+  portfolio: portfolioSection
+  timeline: timelineSection
+  about: aboutSection
+  team: teamSection
+  contact: contactSection
+  clients: clientsSection
+
+header:
+  button:
+    # Section key resolved through the sections map above.
+    target: services
+
+services:
+  items:
+    # - key: ecommerce
+    #   icon: fas fa-shopping-cart
+    # - key: responsive
+    #   icon: fas fa-laptop
+    # - key: markdown
+    #   icon: fab fa-markdown
+    - key: listingVerification
+      icon: fas fa-house-circle-exclamation
+    - key: facadeInspection
+      icon: fas fa-building-circle-exclamation
+    - key: programming
+      icon: fas fa-project-diagram
+    - key: bimrevitdynamo
+      icon: fas fa-cubes
+
+
+timeline:
+  # left is the default; individual events may override with align: right.
+  start_align: left
+  events:
+    - key: beginnings
+      image: assets/img/timeline/1.jpg
+    - key: agency-born
+      image: assets/img/timeline/2.jpg
+    - key: jekyll-theme
+      image: assets/img/timeline/3.jpg
+    - key: your-story
+      image: assets/img/timeline/4.jpg
+      align: right
+
+team:
+  people:
+    - key: kay-garland
+      image: assets/img/team/500x500.jpg
+    - key: larry-parker
+      image: assets/img/team/2.jpg
+    - key: diana-perterson
+      image: assets/img/team/500x500.jpg
+
+clients:
+  max_height: 100px
+  horizontal_scrolling: false
+  items:
+    - key: envato
+      url: https://github.com/raviriley/agency-jekyll-theme
+      logo: assets/img/clients/envato.jpg
+    - key: designmodo
+      url: https://github.com/raviriley/agency-jekyll-theme
+      logo: assets/img/clients/designmodo.jpg
+    - key: themeforest
+      url: https://github.com/raviriley/agency-jekyll-theme
+      logo: assets/img/clients/themeforest.jpg
+    - key: creative-market
+      url: https://github.com/raviriley/agency-jekyll-theme
+      logo: assets/img/clients/creative-market.jpg
+
+footer:
+  # Social links are structural. Add entries here, not in a locale file.
+  # Example:
+  #   - url: https://twitter.com
+  #     icon: "fab fa-twitter"
+  social: []

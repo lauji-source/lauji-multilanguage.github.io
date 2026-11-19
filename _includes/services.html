@@ -1,72 +1,106 @@
-<!-- Services -->
-<!-- Set current_locale variable to prioritize page.locale over site.locale -->
-{% assign current_locale = page.locale | default: site.locale %}
-<!-- Check if current_locale is valid and non-empty instead of site.locale -->
-{% if current_locale and current_locale != "" and current_locale != nil %}
-  <!-- This block renders the Services section using Jekyll's locale-aware site data.
-     When a page has current_locale set, it pulls translated content from site.data.sitetext[current_locale].services;
-     otherwise it falls back to the default site.data.sitetext.services data.
-     This keeps the Services section working for both multilingual and default site builds. -->
-  <!-- Render the Services section ID using current_locale instead of site.locale -->
-  <section class="page-section" id="{{ site.data.sitetext[current_locale].services.section | default: "services" }}">
-    <div class="container">  
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <!-- Render the Services section title using current_locale instead of site.locale -->
-          <h2 class="section-heading text-uppercase">{{ site.data.sitetext[current_locale].services.title | default: "ServicesMilim" }}</h2>
-          <!-- Check if Services text exists using current_locale instead of site.locale -->
-          {% if site.data.sitetext[current_locale].services.text %}
-          <!-- Render the Services section text using current_locale instead of site.locale -->
-          <h3 class="section-subheading text-muted">{{ site.data.sitetext[current_locale].services.text }}</h3>
-          {% endif %}
-        </div>
-      </div>
-      <div class="row text-center">
-        <!-- Loop through services list using current_locale instead of site.locale -->
-        {% for service in site.data.sitetext[current_locale].services.list %}
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="{{ service.icon | default: "fas fa-shopping-cart" }} fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 class="service-heading">{{ service.title | markdownify }}</h4>
-            {% if service.desc %}
-              <div class="text-muted">
-                {{ service.desc | markdownify }}   
-              </div>
-            {% endif %}
-          </div>
-        {% endfor %}
-      </div>
-    </div>
-  </section>
-{% else %}
-  <section class="page-section" id="{{ site.data.sitetext.services.section | default: "services" }}">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">{{ site.data.sitetext.services.title | default: "Services" }}</h2>
-          {% if site.data.sitetext.services.text %}
-            <h3 class="section-subheading text-muted">{{ site.data.sitetext.services.text }}</h3>
-          {% endif %}
-        </div>
-      </div>
-      <div class="row text-center">
-        {% for service in site.data.sitetext.services.list %}
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <i class="fas fa-circle fa-stack-2x text-primary"></i>
-              <i class="{{ service.icon | default: "fas fa-shopping-cart" }} fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 class="service-heading">{{ service.title | markdownify }}</h4>
-            {% if service.desc %}
-            <div class="text-muted">
-              {{ service.desc | markdownify }}
-            </div>{% endif %}
-          </div>
-        {% endfor %}
-      </div>
-    </div>
-  </section>
+<!--
+  Services section for the Jekyll agency theme.
+  This block renders the core service list for the homepage and keeps the
+  content configurable through the site data and locale translations.
+-->
+
+<!--
+  variable current_locale:
+    Chooses the active locale for the current page. It prefers page.locale,
+    then site.locale, and finally the theme default locale from the site config.
+-->
+{% assign current_locale = page.locale | default: site.locale | default: site.data.site.default_locale %}
+
+<!--
+  variable shared:
+    Loads the website-wide config from _data/site.yml.
+    This contains the section id and the list of service entries to render.
+-->
+{% assign shared = site.data.site %}
+
+<!--
+  variable locale_text:
+    Loads the translated strings for the active locale.
+    The template uses this object to read the services title, intro text,
+    and each item's title/description without hardcoding language text.
+-->
+{% assign locale_text = site.data.sitetext[current_locale] %}
+{% unless locale_text %}
+  {% assign base_locale = current_locale | split: '-' | first %}
+  {% assign locale_text = site.data.sitetext[base_locale] %}
+{% endunless %}
+{% unless locale_text %}
+  {% assign locale_text = site.data.sitetext[shared.default_locale] %}
+{% endunless %}
+
+<!-- Use three columns per row by default; four services use two columns per row. 
+ Bootstrap got 12 columns to distribute. -->
+{% assign service_count = shared.services.items | size %}
+{% assign service_column_width = 4 %}
+{% if service_count == 4 %}
+  {% assign service_column_width = 6 %}
 {% endif %}
+
+<!--
+  property shared.sections.services from the variable shared:
+    Sets the HTML anchor id for this section. If no custom value is defined,
+    the default is "services".
+-->
+<section class="page-section" id="{{ shared.sections.services | default: "services" }}">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <!--
+          property locale_text.services.title from the variable locale_text:
+            Displays the translated services section heading.
+        -->
+        <h2 class="section-heading text-uppercase">{{ locale_text.services.title | default: "Services" }}</h2>
+
+        <!--
+          property locale_text.services.text from the variable locale_text:
+            Optional intro text for the services section.
+            It is only rendered when a value exists for the current locale.
+        -->
+        {% if locale_text.services.text %}
+        <h3 class="section-subheading text-muted">{{ locale_text.services.text }}</h3>
+        {% endif %}
+      </div>
+    </div>
+    <div class="row text-center">
+      <!--
+        loop over shared.services.items:
+          Each item describes one service card, including a key, icon, and metadata.
+          We iterate through the configured list and render one block per service.
+      -->
+      {% for item in shared.services.items %}
+        <!--
+          property locale_text.services.items[item.key] from the variable locale_text:
+            Looks up the translated copy for this specific service entry by matching its key.
+        -->
+        {% assign text = locale_text.services.items[item.key] %}
+        <!-- Center the second row when five services wrap into rows of three and two. -->
+        <div class="col-12 col-md-{{ service_column_width }}{% if service_count == 5 and forloop.index == 4 %} offset-md-2{% endif %}">
+          <span class="fa-stack fa-4x">
+            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+            <!--
+              property item.icon from the current loop item:
+                Uses the icon defined in the config, or falls back to the default cart icon.
+            -->
+            <i class="{{ item.icon | default: "fas fa-shopping-cart" }} fa-stack-1x fa-inverse"></i>
+          </span>
+          <!--
+            property text.title from the variable text:
+              Displays this service's translated headline.
+          -->
+          <h4 class="service-heading">{{ text.title | markdownify }}</h4>
+          {% if text.desc %}
+            <div class="text-muted">
+              {{ text.desc | markdownify }}
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
 <!-- End Services -->

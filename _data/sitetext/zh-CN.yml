@@ -1,0 +1,106 @@
+# Simplified Chinese text only. Structure, icons, images, URLs, and section IDs live in _data/site.yml.
+
+header:
+  title: "欢迎来到我们的工作室！"
+  text: "很高兴认识您"
+  button: "了解更多"
+
+nav:
+  services: "服务"
+  about: "关于我们"
+  timeline: "时间线"
+  contact: "联系我们"
+  language: "🌐"
+
+services:
+  title: "服务"
+  text: "我们提供的服务。"
+  items:
+    ecommerce:
+      title: "电子商务"
+      desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
+    responsive:
+      title: "响应式设计"
+      desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
+    markdown:
+      title: "[Markdown](https://zh.wikipedia.org/wiki/Markdown)"
+      desc: "在此处添加您的描述，完全支持 **Markdown**"
+
+portfolio:
+  title: "作品集"
+  text: "Lorem ipsum dolor sit amet consectetur."
+  closebutton: "关闭项目"
+
+timeline:
+  title: "时间线"
+  text: "Lorem ipsum timeline"
+  end: "成为 <br> 我们故事的 <br> 一部分！"
+  events:
+    beginnings:
+      title: "我们谦逊的起点"
+      year: "2009-2011"
+      desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
+      alt: ""
+    agency-born:
+      title: "一家机构诞生了"
+      year: "2011年3月"
+      desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
+      alt: ""
+    jekyll-theme:
+      title: "Jekyll 主题创建"
+      year: "2019"
+      desc: "Ravi Riley 将基于 Bootstrap 的主题 Agency 转换为 Jekyll 主题。该主题可以作为 Ruby gem 安装，也可以远程安装。欲了解更多信息，请访问文档。"
+      alt: "图片描述"
+    your-story:
+      title: "标题"
+      year: "2009-2011"
+      desc: "在此处添加您的描述，完全支持 **Markdown**。"
+      alt: ""
+
+about:
+  title: "关于我们"
+  text: "我们的故事"
+  body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde. 支持 **Markdown**。"
+
+team:
+  title: "我们优秀的团队"
+  text: "Lorem ipsum dolor sit amet consectetur."
+  subtext: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde. 支持 **Markdown**。"
+  people:
+    kay-garland:
+      name: "Kay Garland"
+      role: "Lead Designer"
+    larry-parker:
+      name: "Larry Parker"
+      role: "Lead Marketer"
+    diana-perterson:
+      name: "Diana Perterson"
+      role: "Lead Developer"
+
+clients:
+  items:
+    envato:
+      title: "envato"
+    designmodo:
+      title: "designmodo"
+    themeforest:
+      title: "themeforest"
+    creative-market:
+      title: "Creative Market"
+
+contact:
+  title: "联系我们"
+  text: "Lorem ipsum 或致电 123456789"
+  name: "姓名*"
+  name-validation: "请输入您的姓名。"
+  email: "电子邮件*"
+  email-validation: "请输入您的电子邮件地址。"
+  phone: "电话号码"
+  phone-validation: "请输入您的电话号码。"
+  message: "留言*"
+  message-validation: "请输入留言内容。"
+  subject: "联系表单提交"
+  submit: "发送消息"
+
+footer:
+  legal: "隐私政策"

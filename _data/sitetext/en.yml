@@ -1,0 +1,106 @@
+# English text only. Structure, icons, images, URLs, and section IDs live in _data/site.yml.
+
+header:
+  title: Welcome to our studio!
+  text: Thank you for stopping by.
+  button: Tell Me More
+
+nav:
+  services: Services
+  about: About
+  timeline: Timeline
+  contact: Contact
+  language: "🌐"
+
+services:
+  title: Services
+  text: Our offer
+  items:
+    ecommerce:
+      title: E-Commerce
+      desc: Lorem ipsum dolor 37-39 how to best use
+    responsive:
+      title: Responsive Design
+      desc: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.
+    markdown:
+      title: "[Markdown](https://en.wikipedia.org/wiki/Markdown)"
+      desc: Your description here, full **Markdown** support
+
+portfolio:
+  title: Portfolio
+  text: Lorem ipsum dolor sit amet consectetur.
+  closebutton: Close Project
+
+timeline:
+  title: Timeline
+  text: Lorem ipsum timeline
+  end: "Be Part <br> of Our <br> Story!"
+  events:
+    beginnings:
+      title: Our Humble Beginnings
+      year: "2009-2011"
+      desc: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+      alt: ""
+    agency-born:
+      title: An Agency is Born
+      year: March 2011
+      desc: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+      alt: ""
+    jekyll-theme:
+      title: Jekyll Theme is created
+      year: "2019"
+      desc: Ravi Riley converted Agency, a Bootstrap-based theme, into a Jekyll theme. The Jekyll theme can be installed as a Ruby gem, or remotely. For more information, visit the documentation.
+      alt: image alt text
+    your-story:
+      title: Title
+      year: "2009-2011"
+      desc: Your description here, **Markdown** is fully supported.
+      alt: ""
+
+about:
+  title: About Us
+  text: our story
+  body: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde. **Markdown** supported.
+
+team:
+  title: OUR AMAZING TEAM
+  text: Lorem ipsum dolor sit amet consectetur.
+  subtext: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde. **Markdown** supported.
+  people:
+    kay-garland:
+      name: Kay Garland
+      role: Lead Designer
+    larry-parker:
+      name: Larry Parker
+      role: Lead Marketer
+    diana-perterson:
+      name: Diana Perterson
+      role: Lead Developer
+
+clients:
+  items:
+    envato:
+      title: envato
+    designmodo:
+      title: designmodo
+    themeforest:
+      title: themeforest
+    creative-market:
+      title: Creative Market
+
+contact:
+  title: Contact Us
+  text: Lorem ipsum or call 123456789
+  name: Name*
+  name-validation: Please enter your name.
+  email: Email*
+  email-validation: Please enter your email address.
+  phone: Phone Number
+  phone-validation: Please enter your phone number.
+  message: Message*
+  message-validation: Please enter a message.
+  subject: Contact Form Submission
+  submit: Send Message
+
+footer:
+  legal: Privacy Policy

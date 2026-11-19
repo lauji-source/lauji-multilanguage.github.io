@@ -1,20 +1,55 @@
-<!-- Portfolio Grid -->
-<!-- Set current_locale variable to prioritize page.locale over site.locale -->
-{% assign current_locale = page.locale | default: site.locale %}
-<!-- Check if current_locale is valid and non-empty instead of site.locale -->
-{% if current_locale and current_locale != "" and current_locale != nil %}
-<!-- Render the Portfolio section ID using current_locale instead of site.locale -->
-<section class="bg-light page-section" id="{{ site.data.sitetext[current_locale].portfolio.section | default: "portfolio" }}">
+<!--
+  Portfolio grid section for the Jekyll agency theme.
+  It loops through the portfolio collection and renders a card for each project,
+  then includes the modal markup for the project detail popups.
+-->
+
+<!--
+  variable current_locale:
+    Resolves the active locale for the current page and falls back to the default locale.
+-->
+{% assign current_locale = page.locale | default: site.locale | default: site.data.site.default_locale %}
+
+<!--
+  variable shared:
+    Loads site settings from _data/site.yml, including the section id and default theme values.
+-->
+{% assign shared = site.data.site %}
+
+<!--
+  variable locale_text:
+    Loads the current locale dictionary so the heading and section text can be localized.
+-->
+{% assign locale_text = site.data.sitetext[current_locale] %}
+{% unless locale_text %}
+  {% assign base_locale = current_locale | split: '-' | first %}
+  {% assign locale_text = site.data.sitetext[base_locale] %}
+{% endunless %}
+{% unless locale_text %}
+  {% assign locale_text = site.data.sitetext[shared.default_locale] %}
+{% endunless %}
+
+<!--
+  property shared.sections.portfolio from the variable shared:
+    Sets the section anchor id; defaults to "portfolio" when not configured.
+-->
+<section class="bg-light page-section" id="{{ shared.sections.portfolio | default: "portfolio" }}">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <!-- Render the Portfolio section title using current_locale instead of site.locale -->
-        <h2 class="section-heading text-uppercase">{{ site.data.sitetext[current_locale].portfolio.title | markdownify | default: "Portfolio" }}</h2>
-        <!-- Render the Portfolio section text using current_locale instead of site.locale -->
-        <h3 class="section-subheading text-muted">{{ site.data.sitetext[current_locale].portfolio.text | markdownify }}</h3>
+        <!--
+          property locale_text.portfolio.title from the variable locale_text:
+            Displays the translated portfolio heading.
+        -->
+        <h2 class="section-heading text-uppercase">{{ locale_text.portfolio.title | default: "Portfolio" | markdownify }}</h2>
+        <h3 class="section-subheading text-muted">{{ locale_text.portfolio.text | markdownify }}</h3>
       </div>
     </div>
     <div class="row">
+    <!--
+      loop over site.portfolio:
+        Creates one portfolio card per project entry.
+    -->
     {% for project in site.portfolio %}
       <div class="col-md-4 col-sm-6 portfolio-item">
         <a class="portfolio-link" data-toggle="modal" href="#p{{ forloop.index }}">
@@ -34,34 +69,4 @@
     </div>
   </div>
 </section>
-{% else %}
-<section class="bg-light page-section" id="{{ site.data.sitetext.portfolio.section | default: "portfolio" }}">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <h2 class="section-heading text-uppercase">{{ site.data.sitetext.portfolio.title | markdownify | default: "Portfolio" }}</h2>
-        <h3 class="section-subheading text-muted">{{ site.data.sitetext.portfolio.text | markdownify }}</h3>
-      </div>
-    </div>
-    <div class="row">
-	{% for project in site.portfolio %}
-      <div class="col-md-4 col-sm-6 portfolio-item">
-        <a class="portfolio-link" data-toggle="modal" href="#p{{ forloop.index }}">
-          <div class="portfolio-hover">
-            <div class="portfolio-hover-content">
-              <i class="{{ site.data.style.portfolio-icon | default: "fas fa-plus fa-3x" }}"></i>
-            </div>
-          </div>
-          <img class="img-fluid" src="{{ project.caption.thumbnail }}" alt="">
-        </a>
-        <div class="portfolio-caption">
-          <h4>{{ project.caption.title }}</h4>
-          <p class="text-muted">{{ project.caption.subtitle }}</p>
-        </div>
-      </div>
-	{% endfor %}
-    </div>
-  </div>
-</section>
-{% endif %}
 {% include modals.html %}

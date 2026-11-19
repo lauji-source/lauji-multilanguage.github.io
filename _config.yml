@@ -24,7 +24,15 @@ logo:     #optional, defaults to site title
   path: assets/img/lauji_fr_inverted_with_path.svg
   height: 60 #height in px, defaults to 52px
 
-locale: en # See available languages in _data/sitetext.yml
+logo_zh_CN:
+  path: assets/img/lauji_fr_CN_inverted_with_path.svg
+  height: 60 #height in px, defaults to 52px
+
+logo_zh_TW:
+  path: assets/img/lauji_fr_TW_inverted_with_path.svg
+  height: 60 #height in px, defaults to 52px
+
+locale: en # See available languages in _data/sitetext/
 
 analytics:
   google: #Google Analytics tracking code here
@@ -32,7 +40,7 @@ analytics:
 collections:
 portfolio:
 
-exclude : ["README.md", "Gemfile", "Gemfile.lock", "oldWebsite/"]
+exclude : ["README.md", "Gemfile", "Gemfile.lock", "oldWebsite/", "index.html"]
 
 markdown: kramdown
 

@@ -1,27 +1,58 @@
-<!-- Team -->
-<!-- Set current_locale variable to prioritize page.locale over site.locale -->
-{% assign current_locale = page.locale | default: site.locale %}
-<!-- Check if current_locale is valid and non-empty instead of site.locale -->
-{% if current_locale and current_locale != "" and current_locale != nil %}
-<!-- Render the Team section ID using current_locale instead of site.locale -->
-<section class="page-section" id="{{ site.data.sitetext[current_locale].team.section | default: "team" }}">
+<!--
+  Team section for the Jekyll agency theme.
+  It displays the team cards, each with a localized name and role, along with
+  social links defined in the site configuration.
+-->
+
+<!--
+  variable current_locale:
+    Resolves the active language for the current page.
+-->
+{% assign current_locale = page.locale | default: site.locale | default: site.data.site.default_locale %}
+
+<!--
+  variable shared:
+    Loads the site config so it can iterate through the team members and section settings.
+-->
+{% assign shared = site.data.site %}
+
+<!--
+  variable locale_text:
+    Loads the localized strings for the team section.
+-->
+{% assign locale_text = site.data.sitetext[current_locale] %}
+{% unless locale_text %}
+  {% assign base_locale = current_locale | split: '-' | first %}
+  {% assign locale_text = site.data.sitetext[base_locale] %}
+{% endunless %}
+{% unless locale_text %}
+  {% assign locale_text = site.data.sitetext[shared.default_locale] %}
+{% endunless %}
+
+<!--
+  property shared.sections.team from the variable shared:
+    Sets the section anchor id; if not configured, it defaults to "team".
+-->
+<section class="page-section" id="{{ shared.sections.team | default: "team" }}">
 <div class="container">
   <div class="row">
     <div class="col-lg-12 text-center">
-      <!-- Render the Team section title using current_locale instead of site.locale -->
-      <h2 class="section-heading text-uppercase">{{ site.data.sitetext[current_locale].team.title }}</h2>
-      <!-- Render the Team section text using current_locale instead of site.locale -->
-      <h3 class="section-subheading text-muted">{{ site.data.sitetext[current_locale].team.text }}</h3>
+      <h2 class="section-heading text-uppercase">{{ locale_text.team.title }}</h2>
+      <h3 class="section-subheading text-muted">{{ locale_text.team.text }}</h3>
     </div>
   </div>
   <div class="row d-flex justify-content-center">
-  <!-- Loop through team people using current_locale instead of site.locale -->
-  {% for person in site.data.sitetext[current_locale].team.people %}
+  <!--
+    loop over shared.team.people:
+      Creates one card for each team member and looks up their localized info.
+  -->
+  {% for person in shared.team.people %}
+    {% assign text = locale_text.team.people[person.key] %}
     <div class="col-sm-4">
       <div class="team-member">
         <img class="mx-auto rounded-circle" src="{{ person.image | relative_url }}" alt="">
-        <h4>{{ person.name }}</h4>
-        <p class="text-muted">{{ person.role }}</p>
+        <h4>{{ text.name }}</h4>
+        <p class="text-muted">{{ text.role }}</p>
         <ul class="list-inline social-buttons">
         {% for network in person.social %}
           <li class="list-inline-item">
@@ -37,47 +68,9 @@
   </div>
   <div class="row">
     <div class="col-lg-8 mx-auto text-center">
-      <!-- Render the Team section subtext using current_locale instead of site.locale -->
-      <div class="large text-muted">{{ site.data.sitetext[current_locale].team.subtext | markdownify }}</div>
+      <div class="large text-muted">{{ locale_text.team.subtext | markdownify }}</div>
     </div>
   </div>
 </div>
 </section>
-{% else %}
-<section class="page-section" id="{{ site.data.sitetext.team.section | default: "team" }}">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">{{ site.data.sitetext.team.title }}</h2>
-          <h3 class="section-subheading text-muted">{{ site.data.sitetext.team.text }}</h3>
-        </div>
-      </div>
-      <div class="row d-flex justify-content-center">
-      {% for person in site.data.sitetext.team.people %}
-        <div class="col-sm-4">
-          <div class="team-member">
-            <img class="mx-auto rounded-circle" src="{{ person.image | relative_url }}" alt="">
-            <h4>{{ person.name }}</h4>
-            <p class="text-muted">{{ person.role }}</p>
-            <ul class="list-inline social-buttons">
-            {% for network in person.social %}
-              <li class="list-inline-item">
-                <a href="{{ network.url }}">
-                  <i class="{{ network.icon }}"></i>
-                </a>
-              </li>
-            {% endfor %}
-            </ul>
-          </div>
-        </div>
-      {% endfor %}
-      </div>
-      <div class="row">
-        <div class="col-lg-8 mx-auto text-center">
-          <div class="large text-muted">{{ site.data.sitetext.team.subtext | markdownify }}</div>
-        </div>
-      </div>
-    </div>
-</section>
-{% endif %}
 <!-- End Team -->

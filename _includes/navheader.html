@@ -1,13 +1,51 @@
-<!-- Navigation -->
-<!-- Set current_locale variable to prioritize page.locale over site.locale -->
-{% assign current_locale = page.locale | default: site.locale %}
+<!--
+  Navigation header for the Jekyll agency theme.
+  It renders the site logo, translated navigation links, and the hero header,
+  while preserving the active locale across visits.
+-->
+
+<!--
+  variable current_locale:
+    Chooses the locale for the current page and falls back to the site default when needed.
+-->
+{% assign current_locale = page.locale | default: site.locale | default: site.data.site.default_locale %}
+
+<!--
+  variable shared:
+    Loads the theme configuration from _data/site.yml so the header can read
+    the section ids and button target settings.
+-->
+{% assign shared = site.data.site %}
+
+<!--
+  variable locale_text:
+    Loads the localized strings used by the nav and masthead header.
+-->
+{% assign locale_text = site.data.sitetext[current_locale] %}
+{% unless locale_text %}
+  {% assign base_locale = current_locale | split: '-' | first %}
+  {% assign locale_text = site.data.sitetext[base_locale] %}
+{% endunless %}
+{% unless locale_text %}
+  {% assign locale_text = site.data.sitetext[shared.default_locale] %}
+{% endunless %}
+
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
   <div class="container">
   <a class="navbar-brand js-scroll-trigger" href="#page-top">
         {%- if site.logo -%}
-        <!-- Uses the site logo image from _config.yml (site.logo.path) and sets the image height to 52px by default. -->
+        <!--
+          Select locale-specific logo if available, otherwise fall back to site.logo.
+        -->
+        {%- if current_locale == 'zh-CN' and site.logo_zh_CN -%}
+          {%- assign logo = site.logo_zh_CN -%}
+        {%- elsif current_locale == 'zh-TW' and site.logo_zh_TW -%}
+          {%- assign logo = site.logo_zh_TW -%}
+        {%- else -%}
+          {%- assign logo = site.logo -%}
+        {%- endif -%}
 
-          <img height="{{ site.logo.height | default: 52 }}" src="{{ site.logo.path | relative_url }}"/>
+          <img height="{{ logo.height | default: 52 }}" src="{{ logo.path | relative_url }}"/>
         {%- else -%}
           {{ site.title }}
         {%- endif -%}
@@ -18,34 +56,22 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav text-uppercase ml-auto">
-        <!-- Check if current_locale is valid and non-empty instead of site.locale -->
-        {% if current_locale and current_locale != "" and current_locale != nil %}
-          <!-- Loop through navigation links using current_locale instead of site.locale -->
-          {% for link in site.data.navigation[current_locale].nav %}
-
-            <li class="nav-item">
-              {%- if link.url -%}
-                <a class="nav-link js-scroll-trigger" href="{{ link.url }}">{{ link.title }}</a>
-              {%- elsif link.section -%}
-                <a class="nav-link js-scroll-trigger" href="#{{ link.section }}">{{ link.title }}</a>
-              {%- else -%}
-                <a class="nav-link js-scroll-trigger" href="#">{{ link.title }}</a>
-              {%- endif -%}
-            </li>
-          {% endfor %}
-        {% else %}
-          {% for link in site.data.navigation.nav %}
-            <li class="nav-item">
-              {%- if link.url -%}
-                <a class="nav-link js-scroll-trigger" href="{{ link.url }}">{{ link.title }}</a>
-              {%- elsif link.section -%}
-                <a class="nav-link js-scroll-trigger" href="#{{ link.section }}">{{ link.title }}</a>
-              {%- else -%}
-                <a class="nav-link js-scroll-trigger" href="#">{{ link.title }}</a>
-              {%- endif -%}
-            </li>
-          {% endfor %}
-        {% endif %}
+        <!--
+          loop over site.data.navigation.nav:
+            Creates each navigation item and resolves the label from locale_text.
+        -->
+        {% for item in site.data.navigation.nav %}
+          {% assign label = locale_text.nav[item.key] %}
+          <li class="nav-item">
+            {%- if item.url -%}
+              <a class="nav-link js-scroll-trigger" href="{{ item.url }}">{{ label }}</a>
+            {%- elsif item.section -%}
+              <a class="nav-link js-scroll-trigger" href="#{{ item.section }}">{{ label }}</a>
+            {%- else -%}
+              <a class="nav-link js-scroll-trigger" href="#">{{ label }}</a>
+            {%- endif -%}
+          </li>
+        {% endfor %}
       </ul>
     </div>
   </div>
@@ -53,56 +79,33 @@
 <!-- End Navigation -->
 
 <!-- Header -->
-<!-- Check if current_locale is valid and non-empty instead of site.locale -->
-{% if current_locale and current_locale != "" and current_locale != nil %}
-  <header class="masthead">
-    <div class="container">
-      <div class="intro-text">
-        <!-- Check header.title using current_locale instead of site.locale -->
-        {%- if site.data.sitetext[current_locale].header.title -%}
-          <!-- Render header.title using current_locale instead of site.locale -->
-          <div class="intro-lead-in">{{ site.data.sitetext[current_locale].header.title | markdownify }}</div>
-        {%- endif -%}
-        <!-- Check header.text using current_locale instead of site.locale -->
-        {%- if site.data.sitetext[current_locale].header.text -%}
-          <!-- Render header.text using current_locale instead of site.locale -->
-          <div class="intro-heading text-uppercase">{{ site.data.sitetext[current_locale].header.text | markdownify }}  
-          </div>
-        {%- endif -%}
-        <!-- Check header.button using current_locale instead of site.locale -->
-        {%- if site.data.sitetext[current_locale].header.button -%}
-          <!-- Render header.button and buttonlink using current_locale instead of site.locale -->
-          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="{{ site.data.sitetext[current_locale].header.buttonlink }}">{{ site.data.sitetext[current_locale].header.button }}</a>
-        {%- endif -%}
-      </div>
-    </div>
-  </header>
-{% else %}
 <header class="masthead">
   <div class="container">
     <div class="intro-text">
-  {%- if site.data.sitetext.header.title -%}
-      <div class="intro-lead-in">{{ site.data.sitetext.header.title | markdownify }}</div>
-  {%- endif -%}
-  {%- if site.data.sitetext.header.text -%}
-      <div class="intro-heading text-uppercase">{{ site.data.sitetext.header.text | markdownify }}</div>
-  {%- endif -%}
-  {%- if site.data.sitetext.header.button -%}
-      <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="{{ site.data.sitetext.header.buttonlink }}">{{ site.data.sitetext.header.button }}</a>
-  {%- endif -%}
+      {%- if locale_text.header.title -%}
+        <div class="intro-lead-in">{{ locale_text.header.title | markdownify }}</div>
+      {%- endif -%}
+      {%- if locale_text.header.text -%}
+        <div class="intro-heading text-uppercase">{{ locale_text.header.text | markdownify }}</div>
+      {%- endif -%}
+      {%- if locale_text.header.button -%}
+        {%- assign button_section = shared.sections[shared.header.button.target] -%}
+        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#{{ button_section }}">{{ locale_text.header.button }}</a>
+      {%- endif -%}
     </div>
   </div>
 </header>
-{% endif %}
 <!-- End Header -->
 
-  <!-- Auto-register preferred locale if user lands directly on a localized page -->
+<!-- Auto-register preferred locale if user lands directly on a localized page -->
 {% if current_locale and current_locale != "" and current_locale != nil %}
-  <!-- Script to save current_locale to localStorage with an Immediately invoked function to set preferred-locale, Extract the base language code (e.g., "en" from "en-US") that will Save normalized base locale to localStorage  -->
+  <!-- Save the full locale (e.g. "zh-TW") so region-specific choices are preserved. -->
   <script>
     (function() {
-      const baseLocale = "{{ current_locale }}".split('-')[0];
-      localStorage.setItem('preferred-locale',  baseLocale);
+      const locale = "{{ current_locale }}";
+      if (locale) {
+        localStorage.setItem('preferred-locale', locale);
+      }
     })();
   </script>
 {% endif %}

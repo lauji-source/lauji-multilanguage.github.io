@@ -1,6 +1,40 @@
-<!-- Portfolio Modals -->
+<!--
+  Portfolio modals for the Jekyll agency theme.
+  This file generates one modal per portfolio item and uses the locale data
+  for the close button label and other translated text.
+-->
+
+<!--
+  variable current_locale:
+    Resolves the active language for the current page.
+-->
+{% assign current_locale = page.locale | default: site.locale | default: site.data.site.default_locale %}
+
+<!--
+  variable shared:
+    Loads the site-wide config; used here mainly for default locale fallback.
+-->
+{% assign shared = site.data.site %}
+
+<!--
+  variable locale_text:
+    Loads the translation dictionary for the active locale.
+    The close button label is read from here.
+-->
+{% assign locale_text = site.data.sitetext[current_locale] %}
+{% unless locale_text %}
+  {% assign base_locale = current_locale | split: '-' | first %}
+  {% assign locale_text = site.data.sitetext[base_locale] %}
+{% endunless %}
+{% unless locale_text %}
+  {% assign locale_text = site.data.sitetext[shared.default_locale] %}
+{% endunless %}
+
+<!--
+  loop over site.portfolio:
+    Builds one modal for each project in the portfolio collection.
+-->
 {% for project in site.portfolio %}
-{% if site.locale and site.locale != "" and site.locale != nil %}
 <div
   class="portfolio-modal modal fade"
   id="p{{ forloop.index }}"
@@ -34,8 +68,7 @@
                 type="button"
               >
                 <i class="fas fa-times"></i>
-                {{ site.data.sitetext[site.locale].portfolio.closebutton |
-                default: "Close Project" }}
+                {{ locale_text.portfolio.closebutton | default: "Close Project" }}
               </button>
             </div>
           </div>
@@ -44,50 +77,5 @@
     </div>
   </div>
 </div>
-{% else %}
-<div
-  class="portfolio-modal modal fade"
-  id="p{{ forloop.index }}"
-  tabindex="-1"
-  role="dialog"
-  aria-hidden="true"
->
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="close-modal" data-dismiss="modal">
-        <div class="lr">
-          <div class="rl"></div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <div class="modal-body">
-              <!-- Project Details Go Here -->
-              <h2 class="text-uppercase">{{ project.title }}</h2>
-              <p class="item-intro text-muted">{{ project.subtitle }}</p>
-              <img
-                class="img-fluid d-block mx-auto"
-                src="{{ project.image }}"
-                alt="{{ project.alt }}"
-              />
-              <p>{{ project.content }}</p>
-              <button
-                class="btn btn-primary"
-                data-dismiss="modal"
-                type="button"
-              >
-                <i class="fas fa-times"></i>
-                {{ site.data.sitetext.portfolio.closebutton |
-                default: "Close Project" }}
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-{% endif %}
 {% endfor %}
 <!-- End Portfolio Modals -->

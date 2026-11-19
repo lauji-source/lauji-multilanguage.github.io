@@ -1,7 +1,20 @@
+<!--
+  Welcome section for a landing page or content page.
+  This block reads optional page-level values for the heading and intro text,
+  and falls back to a default label when those values are not provided.
+-->
 <section class="page-section" id="welcome">
   <div class="container">
     <div class="text-center">
+      <!--
+        page.welcome_heading:
+          Uses the page front matter value if present; otherwise it falls back to "Welcome".
+      -->
       <h2 class="section-heading text-uppercase">{{ page.welcome_heading | default: "Welcome" }}</h2>
+      <!--
+        page.welcome_text:
+          Displays the page-specific welcome text if it exists.
+      -->
       <h3 class="section-subheading text-muted">{{ page.welcome_text }}</h3>
     </div>
   </div>

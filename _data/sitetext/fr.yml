@@ -1,0 +1,109 @@
+# French text only. Structure, icons, images, URLs, and section IDs live in _data/site.yml.
+
+header:
+  title: Bienvenue dans notre Studio !
+  text: Merci de votre venue.
+  button: En savoir plus
+
+nav:
+  services: Services
+  about: À propos
+  timeline: Chronologie
+  contact: Contact
+  language: "🌐"
+
+services:
+  title: Services
+  text: Ce que nous offrons.
+  items:
+    listingVerification:
+      title: Attestation de conformité à l’annonce
+      desc: Nous utilisons des drones pour inspecter les toits, les façades et d'autres zones difficiles d'accès, offrant une vue détaillée et précise de l'état de votre propriété.
+    facadeInspection:
+      title: Inspection de façade et gouttière
+      desc: Anticipez les travaux à venir concernant les façades et gouttières de votre immeuble
+    programming:
+      title: Programmation de projet / Assistance à maîtrise d’ouvrage  
+      desc: Nous vous accompagnons dans la planification et la gestion de vos projets immobiliers, en aidant à suivre chaque étape.
+    bimrevitdynamo:
+      title: BIM, Revit et Dynamo
+      desc: Nous utilisons des outils avancés de modélisation et d'automatisation pour améliorer la conception et la gestion de vos projets.
+
+portfolio:
+  title: Portfolio
+  text: Lorem ipsum dolor sit amet consectetur.
+  closebutton: Fermer le projet
+
+timeline:
+  title: Chronologie
+  text: Lorem ipsum timeline
+  end: "Faites <br> partie de <br> notre histoire !"
+  events:
+    beginnings:
+      title: Nos humbles débuts
+      year: "2022"
+      desc: Création de notre agence, nous avons commencé avec un petit bureau et une vision modeste.
+      alt: ""
+    agency-born:
+      title: Une agence est née
+      year: Mars 2011
+      desc: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+      alt: ""
+    jekyll-theme:
+      title: Le thème Jekyll est créé
+      year: "2019"
+      desc: Ravi Riley a converti Agency, un thème basé sur Bootstrap, en un thème Jekyll. Le thème Jekyll peut être installé comme une gemme Ruby, ou à distance. Pour plus d'informations, visitez la documentation.
+      alt: description de l'image
+    your-story:
+      title: Titre
+      year: "2009-2011"
+      desc: Votre description ici, **Markdown** est entièrement supporté.
+      alt: ""
+
+about:
+  title: À propos
+  text: Notre histoirer
+  body: Nous sommes une société à mission qui aide ses clients à prendre des décisions éclairées concernant leurs biens immobiliers.
+
+team:
+  title: NOTRE ÉQUIPE INCROYABLE
+  text: Lorem ipsum dolor sit amet consectetur.
+  subtext: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde. **Markdown** supporté.
+  people:
+    kay-garland:
+      name: Kay Garland
+      role: Lead Designer
+    larry-parker:
+      name: Larry Parker
+      role: Lead Marketer
+    diana-perterson:
+      name: Diana Perterson
+      role: Lead Developer
+
+clients:
+  items:
+    envato:
+      title: envato
+    designmodo:
+      title: designmodo
+    themeforest:
+      title: themeforest
+    creative-market:
+      title: Creative Market
+
+contact:
+  title: Contactez-nous
+  text: Lorem ipsum ou appelez le 123456789
+  name: Nom*
+  name-validation: Veuillez entrer votre nom.
+  email: E-mail*
+  email-validation: Veuillez entrer votre adresse e-mail.
+  phone: Numéro de téléphone
+  phone-validation: Veuillez entrer votre numéro de téléphone.
+  message: Message*
+  message-validation: Veuillez entrer un message.
+  subject: Soumission du formulaire de contact
+  submit: Envoyer le message
+
+footer:
+  legal: Politique de confidentialité
